@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="넥스트이지">
+	<meta name="format-detection" content="telephone=no">
+	
+    <title>관리자 &#124; e-체송함</title>
+	
+	<!-- css -->
+	<link rel="stylesheet" href="../../css/comm/jquery-ui.css">
+	<link rel="stylesheet" href="../../css/admin/comm_default.css">
+	<link rel="stylesheet" href="../../css/admin/comm_style.css">
+	<link rel="stylesheet" href="../../css/admin/frame.css">
+	<link rel="stylesheet" href="../../css/admin/style.css">
+	
+	<!--ie9 미만-->
+	<!--[if lt IE 9]>
+	<script src="../../js/html5shiv.js"></script>
+	<script src="../../js/IE9.js"></script>
+	<![endif]-->
+	
+	<!-- script -->
+	<script src="../../js/comm/jquery-3.4.1.js"></script>
+	<script src="../../js/comm/jquery-ui-1.12.1.js"></script>
+	<script src="../../js/admin/html_comm.js"></script>
+	<script src="../../js/admin/html_style.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<header id="header">
+		<nav class="top-menu">
+            <div class="container">
+                <a href="" class="home">e-체송함 바로가기</a>
+			    <a href="">정보변경</a>
+			    <a href="">로그아웃</a>
+            </div>
+		</nav>
+        <div class="main-menu-wrapper">
+            <div class="container">
+                <h1 class="logo">
+                    <a href=""><img src="../../images/admin/comm/logo.png" alt="제주산업정보서비스"></a>
+                </h1>
+                <nav class="main-menu">
+                    <ul id="depth1" class="depth1">
+                        <li class="active">
+                            <a href="">설정관리</a>
+                            <ul class="depth2">
+                                <li><a href="">부서코드</a></li>
+                                <li><a href="">수신자코드</a></li>
+                                <li><a href="">사이트코드</a></li>
+                                <li><a href="">관리자그룹</a></li>
+                                <li><a href="">프로세스</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">사이트관리</a>
+                            <ul class="depth2">
+                                <li><a href="">팝업관리</a></li>
+                                <li><a href="">배너(링크) 관리</a></li>
+                                <li><a href="">게시판관리</a></li>
+                                <li><a href="">게시판그룹관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">사용자관리</a>
+                            <ul class="depth2">
+                                <li><a href="">시스템 관리자</a></li>
+                                <li><a href="">도,행정시 관리자</a></li>
+                                <li><a href="">읍면동 관리자</a></li>
+                                <li><a href="">부서 관리자</a></li>
+                                <li><a href="">일반사용자</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">통계</a>
+                            <ul class="depth2">
+                                <li><a href="">민간접수통계</a></li>
+                                <li><a href="">부서접수통계</a></li>
+                                <li><a href="">민간발송통계</a></li>
+                                <li><a href="">부서발송통계</a></li>
+                                <li><a href="">방문통계</a></li>
+                                <li><a href="">도정정보방통계</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">로그</a>
+                            <ul class="depth2">
+                                <li><a href="">문서유통변경이력</a></li>
+                                <li><a href="">관리자접속로그</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">e-체송함관리</a>
+                            <ul class="depth2">
+                                <li><a href="">공인인증서변경요청</a></li>
+                                <li><a href="">SMS시간관리</a></li>
+                                <li><a href="">서식관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div> <!--//main-menu-wrapper-->
+	</header>
+
+	<main id="main">
+		<section class="contents-wrap">
+            <h2 class="title1">수신자코드</h2>
+            <!-- 3Depth Menu (메뉴없을 시 삭제) -->
+            <nav class="depth3-menu">
+                <ul>
+                    <li class="active">
+                        <a href="">제주시</a>
+                    </li>
+                    <li>
+                        <a href="">서귀포시</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- //3Depth Menu (메뉴없을 시 삭제) -->
+            
+            
+            <div class="content-zone">
+               
+                <!-- Change Contents (↓↓콘텐츠 변경↓↓) -->
+                
+                <!--검색폼-->
+                <div class="search-form">
+                    <form>
+                        <dl>
+                            <dt>상위부서</dt>
+                            <dd>
+                                <select style="width: 180px">
+                                    <option value="" selected>한림읍</option>
+                                    <option value="">애월읍</option>
+                                </select>
+                            </dd>
+                        </dl>
+                    </form>
+                </div> <!--//search-form-->
+                
+                <div class="align-col2-wrapper">
+                    <div class="l-area">
+                        <button type="button" class="btn black">선택항목 전자결재 사용</button>
+                        <button type="button" class="btn">선택항목 전자결재 미사용</button>
+                    </div>
+                    <div class="r-area">
+                        <button type="button" class="btn green">엑셀다운로드</button>
+                        <button type="button" class="btn blue" onclick="window.open('addressee-code-add.html', '부서코드추가', 'width=800, height=700, menubar=no, status=no, toolbar=no')">수신자코드추가</button>
+                    </div>
+                </div> <!--//align-col2-wrapper-->
+
+                <!--테이블-->
+                <div class="table-wrapper">
+                    <table class="table center">
+                        <colgroup>
+                            <col width="5%">
+                            <col width="10%">
+                            <col>
+                            <col width="8%">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="6%">
+                            <col width="6%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>수신코드</th>
+                                <th>부서정보</th>
+                                <th>직인</th>
+                                <th>문서유통</th>
+                                <th>공인인증서 등록</th>
+                                <th>전자결재</th>
+                                <th colspan="2">관리자툴</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>6510084</td>
+                                <td class="left">제주시 > 주민생활지원국</td>
+                                <td></td>
+                                <td></td>
+                                <td>미등록</td>
+                                <td>미사용</td>
+                                <td>
+                                    <button type="button" class="btn sm blue">수정</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn sm red">삭제</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>6510091</td>
+                                <td class="left">제주시 > 주민생활지원국 > 양성평등지원과</td>
+                                <td></td>
+                                <td><img src="../../images/admin/icon/temp/red_check.png" alt="체크"></td>
+                                <td>미등록</td>
+                                <td>미사용</td>
+                                <td>
+                                    <button type="button" class="btn sm blue">수정</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn sm red">삭제</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> <!--//table-wrapper-->
+                
+                <!-- //Change Contents (↑↑콘텐츠 변경↑↑) -->
+                
+            </div> <!-- //content-zone -->
+            
+		</section> <!--//contents-wrap-->
+	</main>
+
+	<footer id="footer">
+		
+	</footer>
+</div> <!--//wrap-->
+</body>
+</html>

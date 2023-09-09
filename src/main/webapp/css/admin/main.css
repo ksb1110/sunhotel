@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+
+
+/* --------------------------------------------------------- main common ------------------------------------------------------------------ */
+/* default */
+.main-content {width: 1240px; padding: 20px 0 0 20px; box-sizing: border-box; margin: 0 auto;}
+
+
+/* common */
+.main-content .item {background: #fff; border: 1px solid #e1e3e4; border-radius: 5px; height: 215px;}
+.main-content .item.col1 {}
+.main-content .item.col2 {width: 780px;}
+.main-content .item.col2-2 {width: 550px;}
+.main-content .item.col3 {width: 380px;}
+.main-content .item .pd-wrap {padding: 20px;}
+/* --------------------------------------------------------- //main common ------------------------------------------------------------------ */
+
+
+
+/* --------------------------------------------------------- main style ------------------------------------------------------------------ */
+/* preview total info */
+.main-content .preview-total {height: 100px;}
+.main-content .preview-total ul {display: table; width: 100%;}
+.main-content .preview-total ul li {display: table-cell; text-align: center; border-left: 1px solid #e1e3e4;}
+.main-content .preview-total ul li:first-child {border-left: none;}
+.main-content .preview-total ul li h5 {margin-top: 8px;}
+.main-content .preview-total ul li p {font-size: 1.75em; font-weight: bold;}
+.main-content .preview-total ul li .icon img {height: 30px;}
+.main-content .preview-total ul.col4 li {width: 25%;}
+.main-content .preview-total ul.col5 li {width: 20%;}
+.main-content .preview-total ul.col6 li {width: 16%;}
+.main-content .preview-total ul.col7 li {width: 14%;}
+.main-content .preview-total ul.col8 li {width: 12.5%;}
+
+
+
+/* 방문현황 */
+.main-content .visit-info {height: 220px;}
+.main-content .visit-info .title {font-weight: 700;}
+.main-content .visit-info .total {text-align: center; margin: 30px 0;}
+.main-content .visit-info .total .title {font-size: 0.875em; color: #222; margin-bottom: 5px;}
+.main-content .visit-info .total .count {font-size: 1.75em; font-weight: 700; color: #4ba9df;}
+.main-content .visit-info .list {display: table; width: 100%;}
+.main-content .visit-info .list li {display: table-cell; text-align: center;}
+.main-content .visit-info .list .title {font-size: 0.75em; color: #999; margin-bottom: 5px;}
+.main-content .visit-info .list .count {font-size: 1.125em; color: #5f5f60;}
+
+
+
+/* 가입현황 */
+.main-content .sign-info {height: 220px;}
+
+
+
+/* 가입회원 */
+.main-content .sign-member {height: 300px;}
+.main-content .sign-member .table-col > thead > tr > th {padding: 2px 8px;}
+.main-content .sign-member .table-col > tbody > tr > td {padding: 2px 8px;}
+
+
+
+/* 공지사항 */
+.main-content .notice-list,
+.main-content .new-list,
+.main-content .basic-info {height: 215px;}
+
+.main-content .board-list {}
+.main-content .board-list li {font-size: 0.812em; display: table; width: 100%; table-layout: fixed;}
+.main-content .board-list li a, 
+.main-content .board-list li span {display: table-cell; vertical-align: middle; padding: 6px 0;}
+.main-content .board-list li a {
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #2e2e2e;
+    background: url("../../images/admin/list/03.png") no-repeat left center; padding-left: 8px;
+}
+.main-content .board-list li a:hover {font-weight: 700; text-decoration: underline;}
+.main-content .board-list li span {width: 100px; text-align: right; color: #999;}
+
+
+
+/* 기본정보 */
+.main-content .basic-info .info-list {display: table; width: 100%;}
+.main-content .basic-info .info-list ul {display: table-cell; width: 50%; height: 120px; vertical-align: top; border-left: 1px solid #e1e3e4; padding-left: 20px;}
+.main-content .basic-info .info-list ul:first-child {border-left: none; padding-left: 0; padding-right: 20px;}
+.main-content .basic-info .info-list ul li {display: table; width: 100%; font-size: 0.812em;}
+.main-content .basic-info .info-list ul li h6,
+.main-content .basic-info .info-list ul li p {display: table-cell; width: 50%; padding: 6px 0;}
+.main-content .basic-info .info-list ul li p {text-align: right;}
+/* --------------------------------------------------------- //main style ------------------------------------------------------------------ */

@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+
+@media print {
+	/* Default */
+    * {box-sizing: border-box;}
+    html,
+    body,
+    #wrap,
+    .print-preview,
+    .certificate-area {
+        border: 0; margin: 0; padding: 0;
+        width: 210mm; height: auto;
+        /* 배경이미지 반영되지않고 출력될때 */
+        webkit-print-color-adjust: exact;
+    }
+    .print-preview .paper {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        page-break-after: always;
+    }
+    
+    
+    
+    /* Hide Content */
+    #skip_navi {display: none !important;}
+    .print-preview .btn-area {display: none;}
+    
+    
+    
+    /* 수료증 인쇄 */
+    .certificate-group {
+        width: 210mm; height: 297mm; margin: auto;
+        font-size: 22px; line-height: 26px;
+        webkit-print-color-adjust: exact;
+    }
+    .certificate-group .img-bg {width: 210mm; height: 297mm;}
+    .certificate-group .img-bg img {width: 100%; height: auto;}
+    .certificate-group .top-number,
+	.certificate-group .middle-text,
+	.certificate-group .bottom-text {position: absolute; z-index: 2;}
+    .certificate-group .top-number {font-size: 24px !important; top: 168px !important; left: 95px !important;}
+    .certificate-group .middle-text {top: 345px !important; left: 95px !important; right: 95px !important;}
+    .certificate-group .middle-text .info table th {width: 120px !important;}
+    .certificate-group .middle-text .info table th,
+	.certificate-group .middle-text .info table td {font-size: 24px !important; line-height: 38px !important;}
+	.certificate-group .middle-text .memo {font-size: 26px !important; line-height: 40px !important; margin-top: 70px !important;}
+    .certificate-group .bottom-text {font-size: 26px !important; top: 810px !important;}
+	
+    
+}

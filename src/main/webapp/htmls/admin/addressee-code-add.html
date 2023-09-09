@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="넥스트이지">
+	<meta name="format-detection" content="telephone=no">
+	
+	<title>팝업</title>
+	
+	<!-- css -->
+	<link rel="stylesheet" href="../../css/comm/jquery-ui.css">
+	<link rel="stylesheet" href="../../css/admin/comm_default.css">
+	<link rel="stylesheet" href="../../css/admin/comm_style.css">
+	<link rel="stylesheet" href="../../css/admin/frame.css">
+	<link rel="stylesheet" href="../../css/admin/style.css">
+	
+	<!--ie9 미만-->
+	<!--[if lt IE 9]>
+	<script src="../../js/html5shiv.js"></script>
+	<script src="../../js/IE9.js"></script>
+	<![endif]-->
+	
+	<!-- script -->
+	<script src="../../js/comm/jquery-3.4.1.js"></script>
+	<script src="../../js/comm/jquery-ui-1.12.1.js"></script>
+	<script src="../../js/admin/html_comm.js"></script>
+	<script src="../../js/admin/html_style.js"></script>
+</head>
+<body>	
+
+<div class="win-popup">
+   
+    <div class="title-wrapper side">
+        <div class="l-area">
+            <h3 class="title2">수신자코드 추가</h3>
+        </div>
+        <div class="r-area">
+            <div class="necessary-area">
+                <img class="necessary" src="../../images/admin/icon/temp/red_check.png" alt="체크">
+                필수입력
+            </div>
+        </div>
+    </div> <!--//title-wrapper-->
+    
+    <div class="table-wrapper">
+        <table class="table-row th-left">
+            <colgroup>
+                <col style="width: 20%">
+                <col style="width: 30%">
+                <col style="width: 20%">
+                <col style="width: 30%">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>상위부서</th>
+                    <td colspan="3">
+                        <select class="width100">
+                            <option value="" selected>제주시 > e-체송함 > 유관기관</option>
+                            <option value="">제주시 > e-체송함 > 한림읍</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="necessary-area">
+                            <img class="necessary" src="../../images/admin/icon/temp/red_check.png" alt="체크">
+                            수신코드
+                        </div>
+                    </th>
+                    <td>
+                        <input type="text" class="width100">
+                    </td>
+                    <th>
+                        <div class="necessary-area">
+                            <img class="necessary" src="../../images/admin/icon/temp/red_check.png" alt="체크">
+                            부서명
+                        </div>
+                    </th>
+                    <td>
+                        <input type="text" class="width100">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="necessary-area">
+                            <!--<img class="necessary" src="../../images/admin/icon/temp/red_check.png" alt="체크">-->
+                            전화번호
+                        </div>
+                    </th>
+                    <td>
+                        <input type="text" class="width100">
+                    </td>
+                    <th>팩스번호</th>
+                    <td>
+                        <input type="text" class="width100">
+                    </td>
+                </tr>
+                <tr>
+                    <th>대표자 직위</th>
+                    <td>
+                        <input type="text" class="width100">
+                    </td>
+                    <th>대표자명</th>
+                    <td>
+                        <input type="text" class="width100">
+                    </td>
+                </tr>
+                <tr>
+                    <th>발신기관</th>
+                    <td>
+                        <input type="text" class="width100">
+                    </td>
+                    <th>
+                        <div class="necessary-area">
+                            <img class="necessary" src="../../images/admin/icon/temp/red_check.png" alt="체크">
+                            발신명의
+                        </div>
+                    </th>
+                    <td>
+                        <input type="text" class="width100">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="necessary-area">
+                            <img class="necessary" src="../../images/admin/icon/temp/red_check.png" alt="체크">
+                            문서번호문구
+                        </div>
+                    </th>
+                    <td>
+                        <input type="text" class="width100">
+                    </td>
+                    <td colspan="2">
+                        <span class="text-red">※ 부서명을 입력하시고 부서명이 긴 경우 수정</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>상단 캠페인 로고</th>
+                    <td colspan="3">
+                        <input type="text" class="width100">
+                    </td>
+                </tr>
+                <tr>
+                    <th>하단 캠페인 로고</th>
+                    <td colspan="3">
+                        <input type="text" class="width100">
+                    </td>
+                </tr>
+                <tr>
+                    <th>상단 이미지 로고</th>
+                    <td colspan="3">
+                        <label>
+                            <input type="radio" name="test1">
+                            <span>공공기관용</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="test1" checked>
+                            <span>별도등록</span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>상단 좌측<br>이미지 로고</th>
+                    <td colspan="3">
+                        <input type="file" class="width100" accept="image/*">
+                    </td>
+                </tr>
+                <tr>
+                    <th>상단 우측<br>이미지 로고</th>
+                    <td colspan="3">
+                        <input type="file" class="width100" accept="image/*">
+                    </td>
+                </tr>
+                <tr>
+                    <th>이메일</th>
+                    <td colspan="3">
+                        <input type="text" class="width100">
+                    </td>
+                </tr>
+                <tr>
+                    <th>홈페이지</th>
+                    <td colspan="3">
+                        <input type="text" class="width100">
+                    </td>
+                </tr>
+                <tr>
+                    <th>직인이미지</th>
+                    <td colspan="3">
+                        <input type="file" class="width100" accept="image/*">
+                    </td>
+                </tr>
+                <tr>
+                    <th>주소</th>
+                    <td colspan="3">
+                        <div class="addr-area">
+                            <input type="text" class="addr1">
+                            <input type="text" class="addr2">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>SMS 연계</th>
+                    <td colspan="3">
+                        <table class="table-col center">
+                            <colgroup>
+                                <col style="width: 15%">
+                                <col style="width: 42%">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>핸드폰</th>
+                                    <th>성명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0</td>
+                                    <td>
+                                        <input type="text" class="width100">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="width100">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <input type="text" class="width100">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="width100">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>
+                                        <input type="text" class="width100">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="width100">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <th>문서유통여부</th>
+                    <td colspan="3">
+                        <label>
+                            <input type="radio" name="test2" checked>
+                            <span>예, 문서유통부서입니다.</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="test2">
+                            <span>아니오, 문서유통부서가 아닙니다.</span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>전자결재사용</th>
+                    <td colspan="3">
+                        <label>
+                            <input type="radio" name="test3">
+                            <span>예, 사용합니다.</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="test3" checked>
+                            <span>아니오, 기존 기안함을 사용합니다.</span>
+                        </label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> <!--//table-wrapper-->
+    
+    <div class="btn-wrap center">
+        <button type="button" class="btn blue">추가</button>
+        <button type="button" class="btn">닫기</button>
+    </div>
+    
+</div> <!--//win-popup-->
+
+</body>
+</html>

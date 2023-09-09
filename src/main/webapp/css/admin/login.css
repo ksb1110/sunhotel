@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+
+
+/* --------------------------------------------------------- header ------------------------------------------------------------------ */
+body {
+  background: url("../../images/admin/login/bg.jpg") no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#header h1 {line-height: 0; padding: 20px;}
+#header h1 img {display: inline-block;}
+/* --------------------------------------------------------- //header ------------------------------------------------------------------ */
+
+
+
+/* --------------------------------------------------------- login ------------------------------------------------------------------ */
+.login-wrap {position: absolute; left: 0; right: 0; top: 0; bottom: 0; height: 370px; margin: auto; z-index: 999;}
+.login-wrap,
+.login-wrap h2 {width: 500px;}
+.login-wrap h2 {position: absolute; top: -75px; text-align: center; font-size: 32px; font-weight: 700; color: #4ba9df;}
+.login-wrap .copy {font-size: 12px; color: #999; text-align: center; margin-top: 30px;}
+.login-wrap .copy.margin {margin-top: 8px;}
+
+.login-box {
+  border: 2px solid #4ba9df; border-radius: 6px; padding: 50px 75px 45px 50px; box-shadow: 0px 4px 10px #999; overflow: hidden;
+  background: url("../../images/admin/login/box_bg.png") no-repeat right top #fff;
+}
+.login-box h3 {font-size: 18px; color: #4ba9df; margin-bottom: 30px;}
+.login-box .int-box {margin-top: 18px;}
+.login-box .int-box label {display: block; font-size: 12px; color: #5f5f60; margin-bottom: 5px;}
+.login-box .int-box input {width: 100%; height: 35px; padding: 8px; font-size: 14px;}
+.login-box .int-check {margin-top: 5px;}
+.login-box .int-check label {font-size: 12px; color: #5f5f60;}
+.login-box .memo {margin-top: 20px; font-size: 12px; color: #5f5f60; text-align: center;}
+.login-box .login-btn button {border: none; background: #4ba9df; font-size: 14px; font-weight: 700; color: #fff; width: 100%; line-height: 38px; margin-top: 20px; border-radius: 3px;}
+
+.login-wrap.rull {height: 510px;}
+.login-wrap.rull,
+.login-wrap.rull h2 {width: 700px;}
+.login-wrap.rull .login-box {background: #ffffff;}
+.login-box .rull-wrapper {background: #f2f2f2; border: 1px solid #e1e3e4;}
+.login-box .rull-wrapper .rull-area {
+	padding: 20px; box-sizing: border-box; height: 325px; overflow-y: auto;
+	font-size: 14px; line-height: 22px; word-break: break-all;
+}
+.login-box .rull-wrapper .rull-area p,
+.login-box .rull-wrapper .rull-area .list-number {margin-top: 15px;}
+.login-box .rull-wrapper .rull-area p:first-child {margin-top: 0;}
+/* --------------------------------------------------------- //login ------------------------------------------------------------------ */
+
+
+
+
+

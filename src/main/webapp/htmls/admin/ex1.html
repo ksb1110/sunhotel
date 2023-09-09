@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="넥스트이지">
+	<meta name="format-detection" content="telephone=no">
+	
+	<title>관리자페이지</title>
+	
+	<!-- css -->
+	<link rel="stylesheet" href="../../css/comm/jquery-ui.css">
+	<link rel="stylesheet" href="../../css/admin/comm_default.css">
+	<link rel="stylesheet" href="../../css/admin/comm_style.css">
+	<link rel="stylesheet" href="../../css/admin/frame.css">
+	<link rel="stylesheet" href="../../css/admin/style.css">
+	
+	<!--ie9 미만-->
+	<!--[if lt IE 9]>
+	<script src="../../js/html5shiv.js"></script>
+	<script src="../../js/IE9.js"></script>
+	<![endif]-->
+	
+	<!-- script -->
+	<script src="../../js/comm/jquery-3.4.1.js"></script>
+	<script src="../../js/comm/jquery-ui-1.12.1.js"></script>
+	<script src="../../js/admin/html_comm.js"></script>
+	<script src="../../js/admin/html_style.js"></script>
+	<!-- script add -->
+	<script>
+		$(document).ready(function(){
+			//test datepicker
+			$( ".datepicker" ).datepicker({
+				showOn: "both",
+				buttonImage: "../../images/comm/jquery/calendar.gif",
+				buttonImageOnly: true
+			});
+			
+			//탭패널
+			tabPanel({container: "#tabs"});
+			
+			//아코디언
+			accordion();
+		});
+	</script>
+</head>
+<body>
+<div id="wrap">
+    <header id="header">
+        <nav class="top-menu">
+            <div class="container">
+                <a href="" class="home">제주산업정보서비스 바로가기</a>
+                <a href="">비밀번호 변경</a>
+                <a href="">로그아웃</a>
+            </div>
+        </nav>
+        <div class="main-menu-wrapper">
+            <div class="container">
+                <h1 class="logo">
+                    <a href=""><img src="../../images/admin/comm/logo.png" alt="제주산업정보서비스"></a>
+                </h1>
+                <nav class="main-menu">
+                    <ul id="depth1" class="depth1">
+                        <li class="active">
+                            <a href="">지원사업</a>
+                            <ul class="depth2">
+                                <li><a href="">사업공고관리</a></li>
+                                <li><a href="">접수관리</a></li>
+                                <li><a href="">만족도항목관리</a></li>
+                                <li><a href="">성과조사항목관리</a></li>
+                                <li><a href="">기업이력조회</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">교육/세미나</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">지원DB</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">KED</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">RSS</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">부가서비스</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">통계서비스</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">기술거래</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">회원관리</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">CMS</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div> <!--//main-menu-wrapper-->
+    </header>
+
+	<main id="main">
+		<section class="contents-wrap">
+            <h2 class="title1">2Depth Title</h2>
+		
+            <div class="table-wrapper">
+                <table class="table-row">
+                    <colgroup>
+                        <col style="width: 12%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>사업명</th>
+                            <td>2018년 경제협력권 프로젝트 사업설명</td>
+                        </tr>
+                        <tr>
+                            <th>공고명</th>
+                            <td>사업공고명_경제협력</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!--//table-wrapper-->
+            
+            <div class="location-menu">
+                <ul>
+                    <li class="active"><a href="">접수현황</a></li>
+                    <li><a href="">예비진단</a></li>
+                    <li><a href="">선정평가</a></li>
+                    <li><a href="">중간점검</a></li>
+                    <li><a href="">사업종료</a></li>
+                    <li><a href="">만족도조사</a></li>
+                    <li><a href="">성과조사</a></li>
+                </ul>
+            </div> <!--//location-menu-->
+            
+            <div class="depth2-typeA">
+                <ul>
+                    <li class="active"><a href="">재무상태표</a></li>
+                    <li><a href="">손익계산서</a></li>
+                    <li><a href="">현금흐름표</a></li>
+                    <li><a href="">자동변동표</a></li>
+                    <li><a href="">이익잉여금처분계선서</a></li>
+                    <li><a href="">제조원가명세서</a></li>
+                </ul>
+            </div> <!--//depth2-typeA-->
+            
+			<!--검색폼-->
+			<div class="search-form">
+				<form>
+					<dl>
+						<dt>구매일시</dt>
+						<dd>
+							<span class="date-wrap"><input class="datepicker" type="text"></span>
+							<span>~</span>
+							<span class="date-wrap"><input class="datepicker" type="text"></span>
+						</dd>
+						<dt>판매업체명</dt>
+						<dd>
+							<input type="text" size="25" placeholder="가로 크기는 사이즈 태그에서 조절가능하며 최소사이즈는 자동 135px">
+						</dd>
+						<dt>주문번호</dt>
+						<dd>
+							<input type="text" size="25" placeholder="검색옵션이 1줄인 경우">
+						</dd>
+					</dl>
+					<dl>
+						<dt>판매처</dt>
+						<dd>
+							<input type="text" size="40" placeholder="검색옵션이 2줄 이상인 경우">
+						</dd>
+					</dl>
+					<dl>
+						<dt>상품명</dt>
+						<dd>
+							<input type="text" placeholder="검색옵션이 2줄 이상인 경우">
+							<input class="disabled" type="text" placeholder="클래스 disabled 추가">
+							<select>
+								<option value="">옵션1</option>
+								<option value="">옵션2</option>
+							</select>
+							<button type="button" class="btn blue">검색</button>
+						</dd>
+					</dl>
+					<dl>
+						<dt>주문상태</dt>
+						<dd>
+							<label><input type="radio" name="status"><span>전체</span></label>
+							<label><input type="radio" name="status"><span>옵션1</span></label>
+							<label><input type="radio" name="status"><span>옵션2</span></label>
+							<label><input type="radio" name="status"><span>옵션3</span></label>
+							<label><input type="radio" name="status"><span>옵션4</span></label>
+							<label><input class="disabled" type="radio" name="status"><span>옵션5</span></label>
+							<button type="button" class="btn blue" onclick="layer_popup('#targetID');">레이어 팝업</button>
+							<button type="button" class="btn blue" onclick="win_popup('popup.html', 'popup-name', 500, 300);">윈도우 팝업</button>
+						</dd>
+					</dl>
+				</form>
+            </div> <!--//search-form-->
+			
+			<!--타이틀-->
+			<h3 class="title2">
+				검색결과 <small>[총 <strong class="text-blue">16</strong>건]</small>
+				<span class="side-wrap">
+					<button type="button" class="btn black">인쇄</button>
+					<button type="button" class="btn green">excel</button>
+				</span>
+			</h3>
+			
+            <!--테이블-->
+            <div class="table-wrapper">
+                <table class="table center">
+                    <colgroup>
+                        <col style="width: 14%">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>제목2 <span class="label black">Label</span></th>
+                            <th>제목3 <span class="label blue">Label</span></th>
+                            <th>제목4 <span class="label red">Label</span></th>
+                            <th>제목5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="../../images/admin/icon/temp/gray-reply.png" alt="답글" class="reply">내용222</td>
+                            <td>내용3</td>
+                            <td>내용4</td>
+                            <td>내용5</td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../images/admin/icon/temp/blue_check.png" alt="체크"></td>
+                            <td><img src="../../images/admin/icon/temp/red_check.png" alt="체크"></td>
+                            <td><img src="../../images/admin/icon/temp/black_location.png" alt="약도"></td>
+                            <td>
+                                <img src="../../images/admin/icon/temp/black_link.png" alt="link">
+                                <img src="../../images/admin/icon/temp/red_link.png" alt="link">
+                            </td>
+                            <td><button type="button" class="btn blue sm">수정</button><button type="button" class="btn red sm">삭제</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="test"></td>
+                            <td>
+                            	<span class="material-icons">add</span>
+                            </td>
+                            <td>내용3</td>
+                            <td>내용4</td>
+                            <td>내용5</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">합계 : <strong class="text-red">00</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div> <!--//table-wrapper-->
+			
+			<!--버튼-->
+			<div class="btn-wrap">
+				<button type="button" class="btn">목록</button>
+				<button type="button" class="btn black">인쇄</button>
+				<button type="button" class="btn blue">검색</button>
+				<button type="button" class="btn red">삭제</button>
+				<button type="button" class="btn green">excel</button>
+				<a href="#" class="btn">a 링크</a>
+			</div>
+			<div class="btn-wrap">
+				<button type="button" class="btn" disabled>목록</button>
+				<button type="button" class="btn black disabled">인쇄</button>
+				<button type="button" class="btn blue disabled">검색</button>
+				<button type="button" class="btn red disabled">삭제</button>
+				<button type="button" class="btn green disabled">excel</button>
+				<a href="#" class="btn disabled">a 링크</a>
+			</div>
+			
+			<!--페이징-->
+			<div class="paging-wrap">
+				<ul>
+					<li class="first"><a href=""><img src="../../images/admin/paging/first.png" alt="맨처음"></a></li>
+					<li class="prev"><a href=""><img src="../../images/admin/paging/prev.png" alt="이전"></a></li>
+					<li><a href="">1</a></li>
+					<li><a href="">2</a></li>
+					<li><a href="">3</a></li>
+					<li><a href="javascript:alert(1)">4</a></li>
+					<li class="active">5</li>
+					<li><a href="">6</a></li>
+					<li><a href="">7</a></li>
+					<li><a href="">8</a></li>
+					<li><a href="">9</a></li>
+					<li><a href="">10</a></li>
+					<li class="next"><a href=""><img src="../../images/admin/paging/next.png" alt="다음"></a></li>
+					<li class="last"><a href=""><img src="../../images/admin/paging/last.png" alt="마지막"></a></li>
+				</ul>
+			</div>
+			
+			<!--테이블 가로 스크롤-->
+			<div id="tblBackground">
+				<div id="divHeadScroll">
+					<table id="tblHead" class="table-col">
+						<colgroup>
+							<col style="width: 50px">
+							<col style="width: 150px">
+							<col style="width: 200px">
+							<col style="width: 150px">
+							<col style="width: 100px">
+							<col style="width: 200px">
+							<col style="width: 150px">
+							<col style="width: 150px">
+							<col style="width: 150px">
+							<col style="width: 200px">
+							<col style="width: 500px">
+							<col style="width:17px"> <!--스크롤두께고정-->
+						</colgroup>
+						<thead>
+							<tr>
+								<th><input type="checkbox"></th>
+								<th>예약번호</th>
+								<th>예약명</th>
+								<th>예약전화번호</th>
+								<th>환불요청금액</th>
+								<th>기능틀</th>
+								<th>은행</th>
+								<th>계좌</th>
+								<th>예금주</th>
+								<th>상품명</th>
+								<th>상품정보</th>
+								<th></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				
+				<div id="divBodyScroll">
+					<table id="tblBody" class="table-col center">
+						<colgroup>
+							<col style="width: 50px">
+							<col style="width: 150px">
+							<col style="width: 200px">
+							<col style="width: 150px">
+							<col style="width: 100px">
+							<col style="width: 200px">
+							<col style="width: 150px">
+							<col style="width: 150px">
+							<col style="width: 150px">
+							<col style="width: 200px">
+							<col style="width: 500px">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td><input type="checkbox"></td>
+								<td>RV151223000002</td>
+								<td>최영철</td>
+								<td>010-9670-4808</td>
+								<td class="right">377,000</td>
+								<td>
+									<button type="button" class="btn red sm">환불완료</button>
+									<button type="button" class="btn blue sm">환불계좌관리</button>
+								</td>
+								<td>농협</td>
+								<td>110-350-074136</td>
+								<td>강주경</td>
+								<td>30평</td>
+								<td class="left">2015-12-26부터 4박|성인 5명소인 0명유아 0명</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox"></td>
+								<td>RV151223000002</td>
+								<td>최영철</td>
+								<td>010-9670-4808</td>
+								<td class="right">377,000</td>
+								<td>
+									<button type="button" class="btn red sm">환불완료</button>
+									<button type="button" class="btn blue sm">환불계좌관리</button>
+								</td>
+								<td>농협</td>
+								<td>110-350-074136</td>
+								<td>강주경</td>
+								<td>30평</td>
+								<td class="left">2015-12-26부터 4박|성인 5명소인 0명유아 0명</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox"></td>
+								<td>RV151223000002</td>
+								<td>최영철</td>
+								<td>010-9670-4808</td>
+								<td class="right">377,000</td>
+								<td>
+									<button type="button" class="btn red sm">환불완료</button>
+									<button type="button" class="btn blue sm">환불계좌관리</button>
+								</td>
+								<td>농협</td>
+								<td>110-350-074136</td>
+								<td>강주경</td>
+								<td>30평</td>
+								<td class="left">2015-12-26부터 4박|성인 5명소인 0명유아 0명</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<!--탭패널-->
+			<div id="tabs" class="nav-tabs1">
+				<div class="menu-wrap">
+					<ul class="nav-menu">
+						<li><a href="#tabs-1">Menu list1</a></li>
+						<li><a href="#tabs-2">Menu list2 <span>(<strong>0</strong>)</span></a></li>
+						<li><a href="#tabs-3">Menu list3 <span>(<strong>99</strong>)</span></a></li>
+					</ul>
+				</div>
+
+				<div id="tabs-1" class="tabPanel">
+					<div class="pd-wrap">1</div>
+				</div> <!-- //tabs-1 -->
+
+				<div id="tabs-2" class="tabPanel">
+					<div class="pd-wrap">2</div>
+				</div> <!-- //tabs-2 -->
+
+				<div id="tabs-3" class="tabPanel">
+					<div class="pd-wrap">3</div>
+				</div> <!-- //tabs-3 -->
+			</div>
+			
+			<!--탭메뉴-->
+			<div class="nav-tabs1">
+				<div class="menu-wrap">
+					<ul class="nav-menu">
+						<li class="active"><a href="">Menu list1</a></li>
+						<li><a href="">Menu list2 <span>(<strong>0</strong>)</span></a></li>
+						<li><a href="">Menu list3 <span>(<strong>99</strong>)</span></a></li>
+					</ul>
+				</div>
+				<div class="tabPanel show">
+					<div class="pd-wrap">페이지 전환형</div>
+				</div>
+			</div>
+			
+			<!--list style-->
+			<ul class="list-style1">
+				<li class="danger">리스트 스타일1 리스트 스타일1 리스트 스타일1</li>
+				<li>리스트 스타일1 리스트 스타일1 리스트 스타일1 리스트 스타일1</li>
+				<li>리스트 스타일1 리스트 스타일1 리스트 스타일1 리스트 스타일1</li>
+			</ul>
+			
+			
+			<div class="loading-bar">
+				<img src="../../images/admin/icon/loading.gif" alt="로딩중">
+			</div>
+			
+			
+			<!--no item-->
+			<p class="not-content"><img src="../../images/admin/other/no_item.png" alt="표시할 항목이 없습니다"></p>
+			<p class="not-content2"><img src="../../images/admin/other/no_item2.png" alt="콘텐츠 준비중입니다"></p>
+			
+			<!--accordion-->
+			<dl id="accordion" class="accordion">
+				<dt>
+					<a class="open" href="#">제목 내용 클릭시 열림</a>
+				</dt>
+				<dd>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+					3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+					Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+					Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+				</dd>
+
+				<dt>
+					<a class="open" href="#">제목 내용 클릭시 열림 제목 내용 클릭시 열림</a>
+				</dt>
+				<dd>
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+					3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+					Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+					Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+				</dd>
+			</dl>
+		</section>
+		
+		<!--popup content-->
+		<div id="targetID" class="layer-popup">
+			<div class="content-wrap">
+				<div class="content">
+					<div class="head">
+						<h3 class="title">타이틀 제목</h3>
+						<button type="button" class="close"><img src="../../images/admin/btn/close.png" alt="닫기"></button>
+					</div>
+
+					<div class="main">
+						내용입력... 안에서는 div 맘껏 사용가능<br>
+						내용입력... 안에서는 div 맘껏 사용가능
+					</div>
+
+					<div class="foot">
+						<button type="button" class="close btn">닫기</button>
+					</div>
+				</div>
+			</div>
+		</div> <!--//layer-popup-->
+		
+	</main>
+
+	<footer id="footer">
+		
+	</footer>
+</div> <!--//wrap-->
+</body>
+</html>

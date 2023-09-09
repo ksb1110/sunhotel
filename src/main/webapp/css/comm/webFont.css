@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* 웹폰트 사용범위 */
+/*
+WOFF >> 전체지원 (ie 9부터 지원)
+eot >> ie6~ie9 지원
+*/
+
+/* --------------------------------------------------------- 웹폰트 (Site) ------------------------------------------------------------------ */
+/* 나눔 글꼴 */
+/*@import url("https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css");*/ /* font-family: 'Nanum Brush Script', sans-serif; */
+/*@import url("http://fonts.googleapis.com/earlyaccess/nanumpenscript.css");*/ /* font-family: 'Nanum Pen Script', sans-serif; */
+/*@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");*/ /* font-family:'Nanum Gothic', sans-serif; */
+/*@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);*/ /* font-family: 'Nanum Myeongjo', serif; */
+
+
+
+/* Noto sans */
+/*@import url("http://fonts.googleapis.com/earlyaccess/notosanskr.css");*/ /* font-family: "Noto Sans KR", sans-serif; */
+/* --------------------------------------------------------- //웹폰트 (Site) ------------------------------------------------------------------ */
+
+
+
+/* --------------------------------------------------------- 웹폰트 (Download) ------------------------------------------------------------------ */
+/* NanumGothic */
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../font/NanumGothic-Regular.eot");
+    src: url("../../font/NanumGothic-Regular.eot?#iefix") format('embedded-opentype'),
+        url("../../font/NanumGothic-Regular.woff2") format('woff2'),
+        url("../../font/NanumGothic-Regular.woff") format('woff'),
+        url("../../font/NanumGothic-Regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url("../../font/NanumGothic-Bold.eot");
+    src: url("../../font/NanumGothic-Bold.eot?#iefix") format('embedded-opentype'),
+        url("../../font/NanumGothic-Bold.woff2") format('woff2'),
+        url("../../font/NanumGothic-Bold.woff") format('woff'),
+        url("../../font/NanumGothic-Bold.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 800;
+    src: url("../../font/NanumGothic-ExtraBold.eot");
+    src: url("../../font/NanumGothic-ExtraBold.eot?#iefix") format('embedded-opentype'),
+        url("../../font/NanumGothic-ExtraBold.woff2") format('woff2'),
+        url("../../font/NanumGothic-ExtraBold.woff") format('woff'),
+        url("../../font/NanumGothic-ExtraBold.ttf") format('truetype');
+}
+
+
+
+/* NanumSquare */
+@font-face {
+    font-family: "NanumSquare Light";
+    font-style: normal;
+    src: url("../../font/NanumSquareL.eot");
+    src: url("../../font/NanumSquareL.eot?#iefix") format('embedded-opentype'),
+        url("../../font/NanumSquareL.woff") format('woff'),
+        url("../../font/NanumSquareL.ttf") format('truetype');
+}
+@font-face {
+    font-family: "NanumSquare";
+    font-style: normal;
+    src: url("../../font/NanumSquareR.eot");
+    src: url("../../font/NanumSquareR.eot?#iefix") format('embedded-opentype'),
+        url("../../font/NanumSquareR.woff") format('woff'),
+        url("../../font/NanumSquareR.ttf") format('truetype');
+}
+@font-face {
+    font-family: "NanumSquare Bold";
+    font-style: normal;
+    src: url("../../font/NanumSquareB.eot");
+    src: url("../../font/NanumSquareB.eot?#iefix") format('embedded-opentype'),
+        url("../../font/NanumSquareB.woff") format('woff'),
+        url("../../font/NanumSquareB.ttf") format('truetype');
+}
+@font-face {
+    font-family: "NanumSquare ExtraBold";
+    font-style: normal;
+    src: url("../../font/NanumSquareEB.eot");
+    src: url("../../font/NanumSquareEB.eot?#iefix") format('embedded-opentype'),
+        url("../../font/NanumSquareEB.woff") format('woff'),
+        url("../../font/NanumSquareEB.ttf") format('truetype');
+}
+/* --------------------------------------------------------- 웹폰트 (Download) ------------------------------------------------------------------ */
+
+
+
+
+
+/* --------------------------------------------------------- Material Icons (구글폰트아이콘) ------------------------------------------------------------------ */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/font/MaterialIcons-Regular.eot);	/* For IE6-8 */
+  src: local('Material Icons'),
+	   local('MaterialIcons-Regular'),
+	   url(/font/MaterialIcons-Regular.woff2) format('woff2'),
+	   url(/font/MaterialIcons-Regular.woff) format('woff'),
+	   url(/font/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+/* --------------------------------------------------------- //Material Icons (구글폰트아이콘) ------------------------------------------------------------------ */
+
+
+
+
+

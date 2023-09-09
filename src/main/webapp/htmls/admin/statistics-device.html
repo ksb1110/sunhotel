@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="넥스트이지">
+	<meta name="format-detection" content="telephone=no">
+	
+    <title>관리자 &#124; e-체송함</title>
+	
+	<!-- css -->
+	<link rel="stylesheet" href="../../css/comm/jquery-ui.css">
+	<link rel="stylesheet" href="../../css/admin/comm_default.css">
+	<link rel="stylesheet" href="../../css/admin/comm_style.css">
+	<link rel="stylesheet" href="../../css/admin/frame.css">
+	<link rel="stylesheet" href="../../css/admin/style.css">
+	
+	<!--ie9 미만-->
+	<!--[if lt IE 9]>
+	<script src="../../js/html5shiv.js"></script>
+	<script src="../../js/IE9.js"></script>
+	<![endif]-->
+	
+	<!-- script -->
+	<script src="../../js/comm/jquery-3.4.1.js"></script>
+	<script src="../../js/comm/jquery-ui-1.12.1.js"></script>
+	<script src="../../js/admin/html_comm.js"></script>
+	<script src="../../js/admin/html_style.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<header id="header">
+		<nav class="top-menu">
+            <div class="container">
+                <a href="" class="home">e-체송함 바로가기</a>
+			    <a href="">정보변경</a>
+			    <a href="">로그아웃</a>
+            </div>
+		</nav>
+        <div class="main-menu-wrapper">
+            <div class="container">
+                <h1 class="logo">
+                    <a href=""><img src="../../images/admin/comm/logo.png" alt="제주산업정보서비스"></a>
+                </h1>
+                <nav class="main-menu">
+                    <ul id="depth1" class="depth1">
+                        <li>
+                            <a href="">설정관리</a>
+                            <ul class="depth2">
+                                <li><a href="">부서코드</a></li>
+                                <li><a href="">수신자코드</a></li>
+                                <li><a href="">사이트코드</a></li>
+                                <li><a href="">관리자그룹</a></li>
+                                <li><a href="">프로세스</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">사이트관리</a>
+                            <ul class="depth2">
+                                <li><a href="">팝업관리</a></li>
+                                <li><a href="">배너(링크) 관리</a></li>
+                                <li><a href="">게시판관리</a></li>
+                                <li><a href="">게시판그룹관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">사용자관리</a>
+                            <ul class="depth2">
+                                <li><a href="">시스템 관리자</a></li>
+                                <li><a href="">도,행정시 관리자</a></li>
+                                <li><a href="">읍면동 관리자</a></li>
+                                <li><a href="">부서 관리자</a></li>
+                                <li><a href="">일반사용자</a></li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a href="">통계</a>
+                            <ul class="depth2">
+                                <li><a href="">민간접수통계</a></li>
+                                <li><a href="">부서접수통계</a></li>
+                                <li><a href="">민간발송통계</a></li>
+                                <li><a href="">부서발송통계</a></li>
+                                <li><a href="">방문통계</a></li>
+                                <li><a href="">도정정보방통계</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">로그</a>
+                            <ul class="depth2">
+                                <li><a href="">문서유통변경이력</a></li>
+                                <li><a href="">관리자접속로그</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">e-체송함관리</a>
+                            <ul class="depth2">
+                                <li><a href="">공인인증서변경요청</a></li>
+                                <li><a href="">SMS시간관리</a></li>
+                                <li><a href="">서식관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div> <!--//main-menu-wrapper-->
+	</header>
+
+	<main id="main">
+		<section class="contents-wrap">
+            <h2 class="title1">방문 통계</h2>
+            <!-- 3Depth Menu (메뉴없을 시 삭제) -->
+            <nav class="depth3-menu">
+                <ul>
+                    <li>
+                        <a href="">일반</a>
+                    </li>
+                    <li class="active">
+                        <a href="">기기별</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- //3Depth Menu (메뉴없을 시 삭제) -->
+            
+            
+            <div class="content-zone">
+               
+                <!-- Change Contents (↓↓콘텐츠 변경↓↓) -->
+                
+                <div class="count-view-wrapper">
+                    <ul>
+                        <li>
+                            <h3 class="title">PC 방문자</h3>
+                            <div class="count">10,000</div>
+                        </li>
+                        <li>
+                            <h3 class="title">Mobile 방문자</h3>
+                            <div class="count">10,000</div>
+                        </li>
+                        <li>
+                            <h3 class="title">최다 접속 OS</h3>
+                            <div class="count">Internet Explorer 11</div>
+                        </li>
+                    </ul>
+                </div> <!-- //count-view-wrapper -->
+                
+                <div class="item-col2-wrapper statistics">
+                    <div class="col">
+                        <h3 class="title2">PC 통계 현황</h3>
+                        <div class="chart-wrapper">
+                            <div class="chart bg-gray" style="width: 100%; height: 250px;">코드삽입</div>
+                            <div class="caption bottom">&lt;캡션 예시&gt;</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h3 class="title2">모바일 통계 현황</h3>
+                        <div class="chart-wrapper">
+                            <div class="chart bg-gray" style="width: 100%; height: 250px;">코드삽입</div>
+                            <div class="caption bottom">&lt;캡션 예시&gt;</div>
+                        </div>
+                    </div>
+                </div> <!-- //item-col2-wrapper -->
+                
+                <h3 class="title2">OS 상세현황</h3>
+                <div class="table-wrapper">
+                    <table class="table center">
+                        <colgroup>
+                            <col width="16%">
+                            <col>
+                            <col width="20%">
+                            <col width="20%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>순위</th>
+                                <th>운영체제</th>
+                                <th>방문자 수</th>
+                                <th>점유율(%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td class="left">Internet Explorer 11</td>
+                                <td>3,000</td>
+                                <td>30%</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">Chrome (PC)</td>
+                                <td>3,000</td>
+                                <td>30%</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">Chrome (Mobile)</td>
+                                <td>3,000</td>
+                                <td>30%</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">.<br>.<br>.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> <!--//table-wrapper-->
+                
+                <!-- //Change Contents (↑↑콘텐츠 변경↑↑) -->
+                
+            </div> <!-- //content-zone -->
+            
+		</section> <!--//contents-wrap-->
+	</main>
+
+	<footer id="footer">
+		
+	</footer>
+</div> <!--//wrap-->
+</body>
+</html>

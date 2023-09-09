@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="홍원기">
+
+	<title>UI Style Guide</title>
+
+	<!-- css -->
+	<link rel="stylesheet" href="../../css/comm/jquery-ui.css">
+	<link rel="stylesheet" href="../../css/admin/comm_default.css">
+	<link rel="stylesheet" href="../../css/admin/comm_style.css">
+	<link rel="stylesheet" href="../../css/comm/code_style.css"> <!--소스코드테마-->
+	<style>
+		* {font-family:'Nanum Gothic','돋움', 'Dotum', sans-serif;}
+		body {background: #f2f2f2;}
+
+		/*.container {width: 1280px; margin: 0 auto;}*/
+		.container {width: 100%;}
+
+		/* header */
+		header .top {background: #222; padding: 0 20px;}
+		header .top .container {display: table;}
+		header .top .logo, header .top .right {display: table-cell; vertical-align: middle;}
+		header .top .logo {font-size: 16px;}
+		header .top .logo a {font-family: "Noto Sans KR", sans-serif; color: #fff; display: inline-block; padding: 12px 0;}
+		header .top .logo a:hover {color: #58c0f0;}
+		header .top .right {text-align: right; font-size: 12px; color: #fff;}
+		header .top .right a {color: #fff; font-size: 13px;}
+		header .top .right a:hover {color: #58c0f0;}
+		header .main-menu {background: #fff; border-bottom: 1px solid #e1e3e4; box-shadow: 2px 0px 4px #ccc;}
+		header .main-menu .container {text-align: center;}
+		header .main-menu .title {color: #222; font-size: 24px; padding: 18px 0;}
+		
+		/* main */
+		main {margin: 20px;}
+		main .container {display: table; border-spacing: 0; border-collapse: collapse;}
+		main .left-menu, main .contents {display: table-cell; vertical-align: top; background: #fff; border: 1px solid #e1e3e4;}
+		main .left-menu {width: 250px; overflow-y: auto;}
+		main .left-menu .title {font-size: 24px; font-family: "Noto Sans KR", sans-serif; color: #222; border-bottom: 1px solid #e1e3e4; padding-bottom: 10px; margin-bottom: 10px;}
+		main .left-menu .list-wrap > li > a {display: block; padding: 8px 0; font-size: 14px; color: #222;}
+		main .left-menu .list-wrap > li.active > a {color: #58c0f0; font-weight: 700;}
+		main .left-menu .list-wrap li a:hover {color: #58c0f0;}
+		main .left-menu .list-wrap li a.active {color: #58c0f0; font-weight: 700;}
+		main .left-menu ul.depth2 {padding-left: 14px; margin: -2px 0 8px;}
+		main .left-menu ul.depth2 li.active a {color: #58c0f0; font-weight: 700;}
+		main .left-menu ul.depth2 li a {display: block; font-size: 13px; color: #5f5f60; padding: 3px 0;}
+		main .inside {padding: 30px 30px 80px;}
+		
+		main .contents section > .title {font-size: 24px; font-family: "Noto Sans KR", sans-serif; color: #222; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 10px;}
+		main .contents .sub-title {font-size: 16px; color: #5f5f60; margin-bottom: 10px;}
+		main .contents .preview {font-size: 14px; border: 1px solid #e1e3e4; padding: 15px;}
+		main .contents .ex {font-size: 13px; /*background: #f2f2f2; border: 1px solid #e1e3e4; border-top: none; padding: 15px;*/}
+		main .contents .ex pre {margin: 0; padding: 0;}
+		main .contents .ex pre code {margin: 0; padding: 0;}
+		main .contents .inside > section {margin-top: 50px;}
+		main .contents .inside > section:first-child {margin-top: 0px;}
+		
+		/* 상단으로 가기 */
+		.go-top {position: fixed; bottom: 30px; right: 60px; z-index: 99; display: none;}
+		.go-top a {display: block; font-size: 13px; font-weight: 700; color: #333; width: 20px; height: 20px; padding: 10px; background: #f2f2f2; border: 1px solid #e1e3e4; border-radius: 5px;}
+	</style>
+
+	<!-- script -->
+	<script src="../../js/comm/jquery-3.4.1.js"></script>
+	<script src="../../js/jquery-ui-1.11.4.js"></script>
+	<script src="../../js/admin/html_style.js"></script>
+	<script src="http://kissl3oyhong.cafe24.com/js/run_prettify.js"></script> <!--소스코드출력-->
+
+	<!-- script add -->
+	<script>
+		$(document).ready(function() {
+
+			//datepicker 임시용
+			$( ".datepicker" ).datepicker({
+				showOn: "both",
+				buttonImage: "../../images/comm/jquery/calendar.gif",
+				buttonImageOnly: true
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<!--logo-->
+		<section class="top">
+			<div class="container">
+				<h1 class="logo"><a href="common.html">관리자페이지</a></h1>
+				<nav class="right">
+					<a href="==list.html">» Page Guide</a>
+				</nav>
+			</div>
+		</section>
+
+		<!--menu-->
+		<nav class="main-menu">
+			<div class="container"><h2 class="title">UI Style Guide</h2></div>
+		</nav>
+	</header>
+
+	<main>
+		<div class="container">
+			<!--left menu-->
+			<aside id="left_menu" class="left-menu">
+				<div class="inside">
+					<h3 class="title">Quick List</h3>
+					<ul class="list-wrap" id="scroll_spy">
+						<li>
+							<a href="#typography">타이포그래피</a>
+							<ul class="depth2">
+								<li><a href="#typography_title">제목</a></li>
+								<li><a href="#typography_type">문단</a></li>
+								<li><a href="#typography_align">정렬</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#color">컬러</a>
+							<ul class="depth2">
+								<li><a href="#color_font">폰트</a></li>
+							</ul>
+						</li>
+                        <li>
+                            <a href="#list_style">리스트 스타일</a>
+                            <ul class="depth2">
+                                <li><a href="#list_option">Example</a></li>
+                            </ul>
+                        </li>
+						<li>
+							<a href="#button">Button</a>
+							<ul class="depth2">
+								<li><a href="#button_option">Example</a></li>
+								<li><a href="#button_size">버튼 크기</a></li>
+								<li><a href="#button_disabled">비활성화</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#table">Table</a>
+							<ul class="depth2">
+								<li><a href="#table_option">Example</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#form_control">폼</a>
+							<ul class="depth2">
+								<li><a href="#form_option">Example</a></li>
+								<li><a href="#form_size">폼 크기</a></li>
+								<li><a href="#form_label">label</a></li>
+								<li><a href="#form_disabled">비활성화</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#paging">페이징</a>
+							<ul class="depth2">
+								<li><a href="#paging_option">Example</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#label">라벨</a>
+							<ul class="depth2">
+								<li><a href="#label_option">Example</a></li>
+								<li><a href="#label_size">라벨 크기</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#popup">팝업</a>
+							<ul class="depth2">
+								<li><a href="#popup_layer">레이어 팝업</a></li>
+								<li><a href="#popup_window">윈도우 팝업</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#navi">네비게이션</a>
+							<ul class="depth2">
+								<li><a href="#navi_tab">탭패널</a></li>
+								<li><a href="#navi_tab2">탭패널 웹접근성</a></li>
+								<li><a href="#navi_menu">탭메뉴 (메뉴+콘텐츠)</a></li>
+								<li><a href="#navi_menu2">탭메뉴 (탭형)</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#no_item">No Item</a>
+							<ul class="depth2">
+								<li><a href="#no_content">Not Content</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#accordion">Accordion</a>
+							<ul class="depth2">
+								<li><a href="#accordion_option">Example</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#icon">Icon</a>
+							<ul class="depth2">
+								<li><a href="#icon_option">Example</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#photo">Photo</a>
+							<ul class="depth2">
+								<li><a href="#photo_option">Example</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</aside>
+
+			<!--contents-->
+			<div id="contents" class="contents">
+				<div class="inside">
+					<section id="typography">
+						<h3 class="title">타이포그래피</h3>
+						<article>
+							<h4 id="typography_title" class="sub-title">제목</h4>
+							<div class="preview">
+								<h2 class="title1">1Depth Title</h2><br>
+								
+								<h3 class="title2">검색결과 <small>[총 <strong class="text-blue">16</strong>건]</small></h3>
+								
+								<h3 class="title2">
+									검색결과 <small>[총 <strong class="text-blue">16</strong>건]</small>
+									<span class="side-wrap">
+										<button type="button" class="btn black">인쇄</button>
+										<button type="button" class="btn green">excel</button>
+									</span>
+								</h3>
+								
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+    <h2 class="title1">1Depth Title</h2> <!-- 1depth title > h2고정 -->
+    <h3 class="title2">검색결과 <small>[총 <strong class="text-blue">16</strong>건]</small></h3>
+    
+    <!-- 제목형 사이드 버튼 추가시 -->
+    <h3 class="title2">
+        Title <small>[총 <strong class="text-blue">16</strong>건]</small>
+        <span class="side-wrap">
+            Tag..
+        </span>
+    </h3>
+    
+    <!-- Left/Right 정렬 시 -->
+    <div class="title-wrapper side">
+        <div class="l-area">
+            <h3 class="title2">Title</h3>
+        </div>
+        <div class="r-area">
+            Tag..
+        </div>
+    </div> <!--//title-wrapper-->
+	
+									</xmp></pre>
+							</div>
+						</article>
+						<article class="margin-top20">
+							<h4 id="typography_type" class="sub-title">문단</h4>
+							<div class="preview">
+								<div class="type-body">
+									제주국제컨벤션센터 인근에 위치한 사설 아프리카박물관(museum of africa). 지하1층 지상 3층으로 서아프리카 말리(Mail)공화국 젠네모스크 대사원을 모델로 개관하였다.
+									모델이 된 이 사원은 1988년 유네스코 세계문화유산으로 등록된 세계최대의 진흙 건축물이기도 하다. 아프리카 박물관은 아프리카 문화와 예술에 대한 학술적인 조사연구사업을
+									비롯해 출판사업, 아프리카 조각 미술품 수집 및 관리보존, 야외 조각공원 및 아프리카 민속공연 등 제주도에서 아프리카 문화를 체험할 수 있는 곳이다.
+									이곳엔 아프리카 30여 개국 70여 개 부족의 조각품과 가면, 북, 장신구, 의자, 직물등 450여 점의 민속품이 전시되고 있다.
+								</div>
+								<br>
+                                <div class="type-box">
+                                    제주국제컨벤션센터 인근에 위치한 사설 아프리카박물관(museum of africa). 지하1층 지상 3층으로 서아프리카 말리(Mail)공화국 젠네모스크 대사원을 모델로 개관하였다.
+                                    모델이 된 이 사원은 1988년 유네스코 세계문화유산으로 등록된 세계최대의 진흙 건축물이기도 하다. 아프리카 박물관은 아프리카 문화와 예술에 대한 학술적인 조사연구사업을
+                                    비롯해 출판사업, 아프리카 조각 미술품 수집 및 관리보존, 야외 조각공원 및 아프리카 민속공연 등 제주도에서 아프리카 문화를 체험할 수 있는 곳이다.
+                                    이곳엔 아프리카 30여 개국 70여 개 부족의 조각품과 가면, 북, 장신구, 의자, 직물등 450여 점의 민속품이 전시되고 있다.
+                                </div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<div class="type-body">
+		내용 출력..
+	</div>
+                                
+    <div class="type-box">
+		내용 출력..
+	</div>
+									</xmp></pre>
+							</div>
+						</article>
+						<article class="margin-top20">
+							<h4 id="typography_align" class="sub-title">정렬</h4>
+							<div class="preview">
+								<p class="text-left">텍스트 좌측 정렬</p>
+								<p class="text-center">텍스트 중앙 정렬</p>
+								<p class="text-right">텍스트 우측 정렬</p>
+								<p class="text-justify">텍스트 양쪽 정렬</p>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<!--class add-->
+	<p class="text-left">텍스트 좌측 정렬</p>
+	<p class="text-center">텍스트 중앙 정렬</p>
+	<p class="text-right">텍스트 우측 정렬</p>
+	<p class="text-justify">텍스트 양쪽 정렬</p>
+									</xmp></pre>
+							</div>
+						</article>
+					</section>
+					
+					<section id="color">
+						<h3 class="title">컬러</h3>
+						<article>
+							<h4 id="color_font" class="sub-title">폰트</h4>
+							<div class="preview">
+								<span class="text-black">text-black &nbsp;</span>
+								<span class="text-gray">text-gray &nbsp;</span>
+								<span class="text-red">text-red &nbsp;</span>
+								<span class="text-blue">text-blue &nbsp;</span>
+								<span class="text-green">text-green &nbsp;</span>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<!--class add-->									
+	<span class="text-black">text-black &nbsp;</span>
+	<span class="text-gray">text-gray &nbsp;</span>
+	<span class="text-red">text-red &nbsp;</span>
+	<span class="text-blue">text-blue &nbsp;</span>
+	<span class="text-green">text-green &nbsp;</span>
+									</xmp></pre>
+							</div>
+						</article>
+					</section>
+					
+                    <section id="list_style">
+                        <h3 class="title">List Style</h3>
+                        <article>
+                            <h4 id="list_option" class="sub-title">Example</h4>
+                            <div class="preview">
+                                <ul class="list-number">
+                                    <li class="danger">List style List style List style</li>
+                                    <li>
+                                        리스트 스타일1 리스트 스타일1 리스트 스타일1 리스트 스타일1
+                                        <ol>
+                                            <li>리스트 스타일 리스트 스타일 리스트 스타일</li>
+                                            <li>List style List style List style</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                                <br>
+                                <ul class="list-style1">
+                                    <li class="danger">List style List style List style</li>
+                                    <li>리스트 스타일 리스트 스타일 리스트 스타일</li>
+                                    <li>List style List style List style</li>
+                                </ul>
+                            </div>
+                            <div class="ex">
+                                <pre class="prettyprint linenums:1">
+									<xmp>
+	<ul class="list-number">
+		<li class="danger">text</li>
+		<li>text
+			<ol>
+				<li>text</li>
+			</ol>
+		</li>
+	</ul>
+
+	<ul class="list-disc">
+		<li class="danger">text</li>
+		<li>text</li>
+	</ul>
+									</xmp></pre>
+                            </div>
+                        </article>
+                    </section>
+					
+					<section id="button">
+						<h3 class="title">Button</h3>
+						<article>
+							<h4 id="button_option" class="sub-title">버튼 옵션</h4>
+							<div class="preview">
+								<div class="btn-wrap">
+									<button type="button" class="btn">목록</button>
+									<button type="button" class="btn black">인쇄</button>
+									<button type="button" class="btn blue">검색</button>
+									<button type="button" class="btn red">삭제</button>
+									<button type="button" class="btn green">excel</button>
+									<a href="#" class="btn">a 링크</a>
+								</div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<div class="btn-wrap">
+		<!-- a 태그 class 동일사용 / form 전송시 type → submit 변경 -->
+		<button type="button" class="btn">목록</button>
+		<button type="button" class="btn black">인쇄</button>
+		<button type="button" class="btn blue">검색</button>
+		<button type="button" class="btn red">삭제</button>
+		<button type="button" class="btn green">excel</button>
+		<a href="#" class="btn">a 링크</a>
+	</div>
+									</xmp></pre>
+							</div>
+						</article>
+						<article class="margin-top20">
+							<h4 id="button_size" class="sub-title">버튼 크기</h4>
+							<div class="preview">
+								<button type="button" class="btn sm">목록</button>
+								<button type="button" class="btn black sm">인쇄</button>
+								<button type="button" class="btn blue sm">검색</button>
+								<button type="button" class="btn red sm">삭제</button>
+								<button type="button" class="btn green sm">excel</button>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<!--sm 클래스 추가-->								
+	<button type="button" class="btn sm">목록</button>
+									</xmp></pre>
+							</div>
+						</article>
+						<article class="margin-top20">
+							<h4 id="button_disabled" class="sub-title">비활성화</h4>
+							<div class="preview">
+								<div>
+									<button type="button" class="btn" disabled>목록</button>
+									<button type="button" class="btn black" disabled>인쇄</button>
+									<button type="button" class="btn blue" disabled>검색</button>
+									<button type="button" class="btn red" disabled>검색</button>
+									<button type="button" class="btn green" disabled>검색</button>
+								</div>
+								<div>
+									<button type="button" class="btn disabled">목록</button>
+									<button type="button" class="btn black disabled">인쇄</button>
+									<button type="button" class="btn blue disabled">검색</button>
+									<button type="button" class="btn red disabled">검색</button>
+									<button type="button" class="btn green disabled">검색</button>
+									<a href="#" class="btn disabled">a 링크</a>
+								</div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<!--disabled 속성 추가-->
+	<button type="button" class="btn" disabled>목록</button>
+									
+	<!--disabled 클래스 추가-->
+	<button type="button" class="btn disabled">목록</button> <!--스크립트에서 자동 disabled="disabled" 생성-->
+	<a href="#" class="btn disabled">목록</a> <!--스크립트에서 자동 return false 실행-->
+									</xmp></pre>
+							</div>
+						</article>
+					</section>
+					
+					<section id="table">
+						<h3 class="title">Table</h3>
+						<article>
+							<h4 id="table_option" class="sub-title">테이블 옵션</h4>
+							<div class="preview">
+                                <div class="table-wrapper">
+                                    <div class="table-title">
+                                        <h4 class="title">관계회사</h4>
+                                        <p class="side">(단위:%)</p>
+                                    </div>
+                                    <table class="table center">
+                                        <colgroup>
+                                            <col style="width: 14%">
+                                            <col>
+                                            <col>
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th><input type="checkbox"></th>
+                                                <th>제목2</th>
+                                                <th>제목3</th>
+                                                <th>제목4</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th><input type="checkbox"></th>
+                                                <td class="left">좌측정렬</td>
+                                                <td>텍스트 텍스트</td>
+                                                <td>텍스트 텍스트</td>
+                                            </tr>
+                                            <tr>
+                                                <th><img src="../../images/admin/icon/check.png" alt="체크"></th>
+                                                <td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+                                                <td><img src="../../images/admin/icon/location.png" alt="약도"></td>
+                                                <td><button type="button" class="btn blue sm">수정</button><button type="button" class="btn red sm">삭제</button></td>
+                                            </tr>
+                                            <tr>
+                                                <th><input type="radio" name="test"></th>
+                                                <td class="right">우측정렬</td>
+                                                <td>내용3</td>
+                                                <td>내용4</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="4">합계 : <strong class="text-red">00</strong></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div> <!--//table-wrapper-->
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+    <!--col table-->
+    <div class="table-wrapper">
+        <div class="table-title">
+            <h4 class="title">관계회사</h4>
+            <p class="side">(단위:%)</p>
+        </div>
+        <table class="table"> <!-- td 한방에 센터 정렬시 "center" 클래스 추가 -->
+            <colgroup>
+                <col style="width: 15%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>제목1</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="left">내용</td> <!--텍스트 좌측 정렬시-->
+                    <td class="center">내용</td> <!--텍스트 중앙 정렬시-->
+                    <td class="right">내용</td> <!--텍스트 우측 정렬시-->
+                </tr>
+            </tbody>
+            <tfoot> <!--html5에 따른 순서 변경-->
+                <tr>
+                    <td>합계 : <strong class="text-red">00</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div> <!--//table-wrapper-->
+    
+									</xmp></pre>
+							</div>
+						</article>
+					</section>
+					
+					<section id="form_control">
+						<h3 class="title">폼</h3>
+						<article>
+							<h4 id="form_option" class="sub-title">Example</h4>
+							<div class="preview">
+								<input type="tel" placeholder="010">
+								<input type="text" placeholder="제목을 입력하세요">
+								<input type="password" placeholder="비밀번호를 입력하세요">
+								<select>
+									<option value="">옵션1</option>
+									<option value="">옵션2</option>
+								</select>
+								<input type="file" accept="image/*">
+								
+								<div class="margin-top10">
+									<textarea cols="30" rows="5" placeholder="내용입력"></textarea>
+									<textarea cols="50" rows="5" placeholder="내용입력"></textarea>
+								</div>
+
+								<br>
+
+								<div class="email-form">
+									<input type="text">
+									<span class="guide">@</span>
+									<input type="text">
+									<select title="E-mail 호스트 주소를 선택합니다.">
+										<option value="etc">직접입력</option>
+										<option value="naver.com">네이버</option>
+										<option value="hanmail.net">한메일</option>
+										<option value="nate.com">네이트</option>
+										<option value="lycos.co.kr">라이코스</option>
+										<option value="hotmail.com">핫메일</option>
+										<option value="yahoo.co.kr">야후</option>
+										<option value="netian.com">네띠앙</option>
+										<option value="freechal.com">프리챌</option>
+										<option value="empal.com">엠팔</option>
+										<option value="dreamwiz.com">드림위즈</option>
+										<option value="hanafos.com">하나포스</option>
+										<option value="korea.com">코리아닷컴</option>
+										<option value="chollian.net">천리안</option>
+										<option value="hanmir.com">한미르</option>
+										<option value="hitel.net">하이텔</option>
+									</select>
+									<button type="button" class="btn">중복확인</button>
+								</div>
+
+								<br>
+
+								<div class="addr-form">
+									<div>
+										<input class="num" type="text">
+										<button type="button" class="btn">주소검색</button>
+									</div>
+									<div>
+										<input class="addr1" type="text">
+										<input class="addr2" type="text">
+									</div>
+								</div>
+
+								<br>
+
+								<div class="date-container">
+									<span class="date-wrap"><input class="datepicker" type="text"></span>
+									<span class="date-guide">~</span>
+									<span class="date-wrap"><input class="datepicker" type="text"></span>
+								</div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<input type="tel" placeholder="010">
+	<input type="text" placeholder="제목을 입력하세요">
+	<input type="password" placeholder="비밀번호를 입력하세요">
+	<select>
+		<option value="">옵션1</option>
+		<option value="">옵션2</option>
+	</select>
+	<input type="file" accept="image/*">
+	<textarea cols="30" rows="5" placeholder="내용입력"></textarea>
+	
+	<!--이메일폼-->
+	<div class="email-form">
+		<input type="text">
+		<span class="guide">@</span>
+		<input type="text">
+		<select title="E-mail 호스트 주소를 선택합니다.">
+			<option value="etc">직접입력</option>
+			<option value="naver.com">네이버</option>
+			<option value="hanmail.net">한메일</option>
+			<option value="nate.com">네이트</option>
+			<option value="lycos.co.kr">라이코스</option>
+			<option value="hotmail.com">핫메일</option>
+			<option value="yahoo.co.kr">야후</option>
+			<option value="netian.com">네띠앙</option>
+			<option value="freechal.com">프리챌</option>
+			<option value="empal.com">엠팔</option>
+			<option value="dreamwiz.com">드림위즈</option>
+			<option value="hanafos.com">하나포스</option>
+			<option value="korea.com">코리아닷컴</option>
+			<option value="chollian.net">천리안</option>
+			<option value="hanmir.com">한미르</option>
+			<option value="hitel.net">하이텔</option>
+		</select>
+		<button type="button" class="btn">중복확인</button>
+	</div>
+	
+	<!-- 주소 입력폼 -->
+	<div class="addr-form">
+		<div>
+			<input class="num" type="text">
+			<button type="button" class="btn">주소검색</button>
+		</div>
+		<div>
+			<input class="addr1" type="text">
+			<input class="addr2" type="text">
+		</div>
+	</div>
+	
+	<!-- datepicker -->
+	<div class="date-container">
+		<span class="date-wrap"><input class="datepicker" type="text"></span>
+		<span class="date-guide">~</span>
+		<span class="date-wrap"><input class="datepicker" type="text"></span>
+	</div>								
+	<script>
+		//datepicker 임시용
+		$( ".datepicker" ).datepicker({
+			showOn: "both",
+			buttonImage: "../../images/comm/jquery/calendar.gif",
+			buttonImageOnly: true
+		});
+	</script>
+									</xmp></pre>
+							</div>
+						</article>
+						<article class="margin-top20">
+							<h4 id="form_size" class="sub-title">폼 크기</h4>
+							<div class="preview">
+								<input class="width100" type="text" placeholder="class width100">
+								<select class="width100">
+									<option value="">내용1</option>
+									<option value="">내용2</option>
+								</select>
+								<input size="35" type="text" placeholder="size 수치 조절">
+								<input class="wide" type="text" placeholder="wide 클래스 추가">
+								<input class="small" type="text" placeholder="small 클래스 추가">
+								<div>
+									<input class="col3" type="tel" placeholder="010">
+									<input class="col3" type="tel" placeholder="1234">
+									<input class="col3" type="tel" placeholder="5678">
+								</div>
+								
+								<div class="margin-top10">
+									<textarea class="width100" rows="5" placeholder="내용입력"></textarea>
+								</div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<input class="width100" type="text" placeholder="class width100">
+	<select class="width100">
+		<option value="">내용1</option>
+		<option value="">내용2</option>
+	</select>
+	<input size="50" type="text" placeholder="size 수치 조절">
+	<input class="wide" type="text" placeholder="wide 클래스 추가">
+	<input class="small" type="text" placeholder="small 클래스 추가">
+	<div>
+		<input class="col3" type="tel" placeholder="class col3">
+		<input class="col3" type="tel" placeholder="class col3">
+		<input class="col3" type="tel" placeholder="class col3">
+	</div>
+	<textarea class="width100" rows="5" placeholder="내용입력"></textarea>
+									</xmp></pre>
+							</div>
+						</article>
+						<article class="margin-top20">
+							<h4 id="form_label" class="sub-title">label</h4>
+							<div class="preview">
+								<label><input type="checkbox"><span>동의함</span></label>
+								<label><input type="checkbox"><span>동의안함</span></label>
+								<label><input type="radio" name="sex"><span>남성</span></label>
+								<label><input type="radio" name="sex"><span>여성</span></label>
+								
+								<div class="form-label">
+									<input id="check1" type="checkbox"><label for="check1">동의함</label>
+									<input id="check2" type="checkbox"><label for="check2">동의안함</label>
+									<input id="radio1" type="radio" name="sex2"><label for="radio1">남성</label>
+									<input id="radio2" type="radio" name="sex2"><label for="radio2">여성</label>
+								</div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<!--default-->
+	<label><input type="checkbox"><span>동의함</span></label>
+	<label><input type="checkbox"><span>동의안함</span></label>
+	<label><input type="radio" name="sex"><span>남성</span></label>
+	<label><input type="radio" name="sex"><span>여성</span></label>
+								
+	<!--label for id-->
+	<div class="form-label"> <!--form-label 클래스 추가-->
+		<input id="check1" type="checkbox"><label for="check1">동의함</label>
+		<input id="check2" type="checkbox"><label for="check2">동의안함</label>
+		<input id="radio1" type="radio" name="sex2"><label for="radio1">남성</label>
+		<input id="radio2" type="radio" name="sex2"><label for="radio2">여성</label>
+	</div>
+									</xmp></pre>
+							</div>
+						</article>
+						<article class="margin-top20">
+							<h4 id="form_disabled" class="sub-title">비활성화</h4>
+							<div class="preview">
+								<input type="text">
+								<input class="disabled" type="text">
+								<input class="disabled" type="password">
+								<select class="disabled">
+									<option value="">옵션1</option>
+									<option value="">옵션2</option>
+								</select>
+								<textarea class="width100 disabled" rows="5" placeholder="내용입력"></textarea>
+								
+								<div class="margin-top10">
+									<label><input class="disabled" type="checkbox"><span>동의함</span></label>
+									<label><input class="disabled" type="radio"><span>남성</span></label>
+								</div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<!--disabled 클래스 추가 / 스크립트에서 자동 disabled="disabled" 생성 -->
+	<input class="disabled" type="text">
+	<input class="disabled" type="checkbox">
+									</xmp></pre>
+							</div>
+						</article>
+					</section>
+					
+					<section id="paging">
+						<h3 class="title">페이징</h3>
+						<article>
+							<h4 id="paging_option" class="sub-title">Example</h4>
+							<div class="preview">
+								<div class="paging-wrap">
+									<ul>
+										<li class="first"><a href=""><img src="../../images/admin/paging/first.png" alt="맨처음"></a></li>
+										<li class="prev"><a href=""><img src="../../images/admin/paging/prev.png" alt="이전"></a></li>
+										<li><a href="">1</a></li>
+										<li><a href="">2</a></li>
+										<li><a href="">3</a></li>
+										<li><a href="">4</a></li>
+										<li class="active">5</li>
+										<li><a href="">6</a></li>
+										<li><a href="">7</a></li>
+										<li><a href="">8</a></li>
+										<li><a href="">9</a></li>
+										<li><a href="">10</a></li>
+										<li class="next"><a href=""><img src="../../images/admin/paging/next.png" alt="다음"></a></li>
+										<li class="last"><a href=""><img src="../../images/admin/paging/last.png" alt="마지막"></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<div class="paging-wrap">
+		<ul>
+			<li class="first"><a href=""><img src="../../images/admin/paging/first.png" alt="맨처음"></a></li>
+			<li class="prev"><a href=""><img src="../../images/admin/paging/prev.png" alt="이전"></a></li>
+			<li><a href="">1</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li><a href="">4</a></li>
+			<li class="active">5</li>
+			<li><a href="">6</a></li>
+			<li><a href="">7</a></li>
+			<li><a href="">8</a></li>
+			<li><a href="">9</a></li>
+			<li><a href="">10</a></li>
+			<li class="next"><a href=""><img src="../../images/admin/paging/next.png" alt="다음"></a></li>
+			<li class="last"><a href=""><img src="../../images/admin/paging/last.png" alt="마지막"></a></li>
+		</ul>
+	</div>
+									</xmp></pre>
+							</div>
+						</article>
+					</section>
+					
+					<section id="label">
+						<h3 class="title">라벨</h3>
+						<article>
+							<h4 id="label_option" class="sub-title">Example</h4>
+							<div class="preview">
+								<span class="label">라벨</span>
+								<span class="label black">라벨</span>
+								<span class="label blue">라벨</span>
+								<span class="label red">라벨</span>
+								<span class="label green">라벨</span>
+								
+								<br><br>
+								
+								<span class="label disabled">라벨</span>
+								<span class="label black disabled">라벨</span>
+								<span class="label blue disabled">라벨</span>
+								<span class="label red disabled">라벨</span>
+								<span class="label green disabled">라벨</span>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<span class="label">라벨</span>
+	<span class="label black">라벨</span>
+	<span class="label blue">라벨</span>
+	<span class="label red">라벨</span>
+	<span class="label green">라벨</span>
+	
+	<!-- disabled 클래스 추가 -->
+	<span class="label disabled">라벨</span>
+									</xmp></pre>
+							</div>
+						</article>
+						<article class="margin-top20">
+							<h4 id="label_size" class="sub-title">라벨 크기</h4>
+							<div class="preview">
+								<h1>검색결과 <span class="label black big">라벨</span></h1><br>
+								<h3>검색결과 <span class="label black">라벨</span></h3><br>
+								<h6>검색결과 <span class="label black sm">라벨</span></h6>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<h1>검색결과 <span class="label big">라벨</span></h1>	<!-- big -->
+	<h3>검색결과 <span class="label">라벨</span></h3>		<!-- default -->
+	<h6>검색결과 <span class="label sm">라벨</span></h6>	<!-- small -->
+									</xmp></pre>
+							</div>
+						</article>
+					</section>
+					
+					<section id="popup">
+						<h3 class="title">팝업</h3>
+						<article>
+							<h4 id="popup_layer" class="sub-title">레이어 팝업</h4>
+							<div class="preview">
+								<div>
+									<a class="btn" href="javascript:layer_popup('#targetID')">default</a>
+									<button type="button" class="btn" onclick="layer_popup('#targetID2');">small</button>
+									<button type="button" class="btn" onclick="layer_popup('#targetID3');">big</button>
+									<button type="button" class="btn" onclick="layer_popup('#targetID4');">scroll</button>
+								</div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<button type="button" class="btn" onclick="layer_popup('#targetID');">타겟 ID 지정</button>
+	
+	<!--팝업콘텐츠 (타겟 ID동일)-->
+	<div id="targetID" class="layer-popup">
+		<div class="content-wrap"> <!--클래스 추가 → sm : 작은팝업, big : 큰팝업-->
+			<div class="content">
+				<div class="head">
+					<h3 class="title">타이틀 제목</h3>
+					<button type="button" class="close"><img src="../../images/admin/btn/close.png" alt="닫기"></button>
+				</div>
+				
+				<div class="main">
+					<div class="scroll" style="height: 150px"> <!--scroll 시에만 class 사용 (높이지정가능) / 불필요시 클래스 및 div삭제-->
+						내용입력... 안에서는 div 맘껏 사용가능
+					</div>
+				</div>
+				
+				<div class="foot">
+					<button type="button" class="close btn">닫기</button>
+				</div>
+			</div>
+		</div>
+	</div> <!--//layer-popup-->
+
+									</xmp></pre>
+							</div>
+						</article>
+						<article class="margin-top20">
+							<h4 id="popup_window" class="sub-title">윈도우 팝업</h4>
+							<div class="preview">
+								<div>
+									<button type="button" class="btn" onclick="win_popup('popup.html', 'popup-name', 500, 400)">popup</button>
+								</div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<!--파일명, 팝업창 이름, 가로, 세로 필히 입력-->
+	<button type="button" class="btn" onclick="win_popup('popup.html', 'popup-name', 500, 400)">popup</button>
+									</xmp></pre>
+							</div>
+						</article>
+
+						<!--popup content-->
+						<div id="targetID" class="layer-popup">
+							<div class="content-wrap">
+								<div class="content">
+									<div class="head">
+										<h3 class="title">타이틀 제목</h3>
+										<button type="button" class="close"><img src="../../images/admin/btn/close.png" alt="닫기"></button>
+									</div>
+
+									<div class="main">
+										내용입력... 안에서는 div 맘껏 사용가능<br>
+										내용입력... 안에서는 div 맘껏 사용가능
+									</div>
+									
+									<div class="foot">
+										<button type="button" class="close btn">닫기</button>
+									</div>
+								</div>
+							</div>
+						</div> <!--//layer-popup-->
+						
+						<div id="targetID2" class="layer-popup">
+							<div class="content-wrap sm">
+								<div class="content">
+									<div class="head">
+										<h3 class="title">타이틀 제목 입력</h3>
+										<button type="button" class="close"><img src="../../images/admin/btn/close.png" alt="닫기"></button>
+									</div>
+
+									<div class="main">
+										내용입력... 안에서는 div 맘껏 사용가능<br>
+										내용입력... 안에서는 div 맘껏 사용가능
+									</div>
+									
+									<div class="foot">
+										<button type="button" class="close btn">닫기</button>
+									</div>
+								</div>
+							</div>
+						</div> <!--//layer-popup-->
+						
+						<div id="targetID3" class="layer-popup">
+							<div class="content-wrap big">
+								<div class="content">
+									<div class="head">
+										<h3 class="title">타이틀 제목 입력</h3>
+										<button type="button" class="close"><img src="../../images/admin/btn/close.png" alt="닫기"></button>
+									</div>
+
+									<div class="main">
+										내용입력... 안에서는 div 맘껏 사용가능<br>
+										내용입력... 안에서는 div 맘껏 사용가능
+									</div>
+
+									<div class="foot">
+										<button type="button" class="close btn">닫기</button>
+									</div>
+								</div>
+							</div>
+						</div> <!--//layer-popup-->
+						
+						<div id="targetID4" class="layer-popup">
+							<div class="content-wrap">
+								<div class="content">
+									<div class="head">
+										<h3 class="title">타이틀 제목 입력</h3>
+										<button type="button" class="close"><img src="../../images/admin/btn/close.png" alt="닫기"></button>
+									</div>
+
+									<div class="main">
+										<div class="scroll" style="height: 150px">
+											내용입력... 안에서는 div 맘껏 사용가능<br>내용입력... 안에서는 div 맘껏 사용가능<br>
+											내용입력... 안에서는 div 맘껏 사용가능<br>내용입력... 안에서는 div 맘껏 사용가능<br>
+											내용입력... 안에서는 div 맘껏 사용가능<br>내용입력... 안에서는 div 맘껏 사용가능<br>
+											내용입력... 안에서는 div 맘껏 사용가능<br>내용입력... 안에서는 div 맘껏 사용가능<br>
+											내용입력... 안에서는 div 맘껏 사용가능<br>내용입력... 안에서는 div 맘껏 사용가능<br>
+											내용입력... 안에서는 div 맘껏 사용가능<br>내용입력... 안에서는 div 맘껏 사용가능<br>
+											내용입력... 안에서는 div 맘껏 사용가능<br>내용입력... 안에서는 div 맘껏 사용가능<br>
+											내용입력... 안에서는 div 맘껏 사용가능<br>내용입력... 안에서는 div 맘껏 사용가능<br>
+											내용입력... 안에서는 div 맘껏 사용가능<br>내용입력... 안에서는 div 맘껏 사용가능<br>
+											내용입력... 안에서는 div 맘껏 사용가능<br>내용입력... 안에서는 div 맘껏 사용가능<br>
+											내용입력... 안에서는 div 맘껏 사용가능<br>내용입력... 안에서는 div 맘껏 사용가능<br>
+											내용입력... 안에서는 div 맘껏 사용가능<br>내용입력... 안에서는 div 맘껏 사용가능<br>
+										</div>
+									</div>
+									
+									<div class="foot">
+										<button type="button" class="close btn">닫기</button>
+									</div>
+								</div>
+							</div>
+						</div> <!--//layer-popup-->
+					</section>
+					
+					<section id="navi">
+						<h3 class="title">네비게이션</h3>
+						<article>
+							<h4 id="navi_tab" class="sub-title">탭패널</h4>
+							<div class="preview">
+								<div id="tabs" class="nav-tabs1">
+									<div class="menu-wrap">
+										<ul class="nav-menu">
+											<li><a href="#tabs-1">Menu list1</a></li>
+											<li><a href="#tabs-2">Menu list2 <span>(<strong>0</strong>)</span></a></li>
+											<li><a href="#tabs-3">Menu list3 <span>(<strong>99</strong>)</span></a></li>
+										</ul>
+									</div>
+
+									<div id="tabs-1" class="tabPanel">
+										<div class="pd-wrap">1</div>
+									</div> <!-- //tabs-1 -->
+
+									<div id="tabs-2" class="tabPanel">
+										<div class="pd-wrap">2</div>
+									</div> <!-- //tabs-2 -->
+
+									<div id="tabs-3" class="tabPanel">
+										<div class="pd-wrap">3</div>
+									</div> <!-- //tabs-3 -->
+
+									<script>
+										//tabPanel({container: "#tabs"});
+										tabPanel({
+											container: "#tabs",
+											firstItem: "#tabs-3",
+											active: 2
+										});
+									</script>
+								</div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<div id="tabs" class="nav-tabs1">
+		<div class="menu-wrap">
+			<ul class="nav-menu">
+				<li><a href="#tabs-1">Menu list1</a></li>
+				<li><a href="#tabs-2">Menu list2 <span>(<strong>0</strong>)</span></a></li>
+				<li><a href="#tabs-3">Menu list3 <span>(<strong>99</strong>)</span></a></li>
+			</ul>
+		</div>
+		
+		<div id="tabs-1" class="tabPanel">
+			<div class="pd-wrap">1</div>
+		</div> <!-- //tabs-1 -->
+		<div id="tabs-2" class="tabPanel">
+			<div class="pd-wrap">2</div>
+		</div> <!-- //tabs-2 -->
+		<div id="tabs-3" class="tabPanel">
+			<div class="pd-wrap">3</div>
+		</div> <!-- //tabs-3 -->
+		
+		<script>
+			tabPanel({
+				container: "#tabs",		//해당 ID
+				firstItem: "#tabs-3",	//show item
+				active: 2				//해당 menu add class
+			});
+		</script>
+	</div>
+									</xmp></pre>
+							</div>
+						</article>
+						
+						<article class="margin-top20">
+							<h4 id="navi_tab2" class="sub-title">탭패널 웹접근성</h4>
+							<div class="preview">
+								
+								<div id="tab_wrap" class="tab-wrap">
+									<ul class="tab-list">
+										<li>
+											<a class="tab-menu" href="#">Menu list1</a>
+											<div class="tab-contents">
+												<div class="tab-ct">
+													<ul>
+														<li><a href="">title output1</a></li>
+														<li><a href="">title output1</a></li>
+													</ul>
+												</div>
+												<div class="tab-btn">
+													<a href="http://naver.com">더보기1</a>
+												</div>
+											</div>
+										</li>
+										<li>
+											<a class="tab-menu" href="#">Menu list2</a>
+											<div class="tab-contents">
+												<div class="tab-ct">
+													<ul>
+														<li><a href="">title output2</a></li>
+														<li><a href="">title output2</a></li>
+													</ul>
+												</div>
+												<div class="tab-btn">
+													<a href="http://daum.net">더보기2</a>
+												</div>
+											</div>
+										</li>
+										<li>
+											<a class="tab-menu" href="#">Menu list3</a>
+											<div class="tab-contents">
+												<div class="tab-ct">
+													<ul>
+														<li><a href="">title output3</a></li>
+														<li><a href="">title output3</a></li>
+													</ul>
+												</div>
+												<div class="tab-btn">
+													<a href="http://nate.com">더보기3</a>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<script>
+									//tabPanel2({container: "#tab_wrap"});
+									tabPanel2({
+										container: "#tab_wrap",
+										active: 2
+									});
+								</script>
+								
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<div id="tab_wrap" class="tab-wrap">
+		<ul class="tab-list">
+			<li>
+				<a class="tab-menu" href="#">Menu list1</a>
+				<div class="tab-contents">
+					<div class="tab-ct">
+						<ul>
+							<li><a href="">title output1</a></li>
+						</ul>
+					</div>
+					<div class="tab-btn">
+						<a href="">더보기</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<a class="tab-menu" href="#">Menu list2</a>
+				<div class="tab-contents">
+					<div class="tab-ct">
+						<ul>
+							<li><a href="">title output2</a></li>
+						</ul>
+					</div>
+					<div class="tab-btn">
+						<a href="http://daum.net">더보기2</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<a class="tab-menu" href="#">Menu list3</a>
+				<div class="tab-contents">
+					<div class="tab-ct">
+						<ul>
+							<li><a href="">title output3</a></li>
+						</ul>
+					</div>
+					<div class="tab-btn">
+						<a href="http://nate.com">더보기3</a>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<script>
+		tabPanel2({
+			container: "#tab_wrap",		//해당 ID
+			active: 2					//show item  삭제시 default(0)
+		});
+	</script>
+									</xmp></pre>
+							</div>
+						</article>
+						
+						<article class="margin-top20">
+							<h4 id="navi_menu" class="sub-title">탭메뉴 (메뉴+콘텐츠)</h4>
+							<div class="preview">
+								<div class="nav-tabs1">
+									<div class="menu-wrap">
+										<ul class="nav-menu">
+											<li class="active"><a href="">Menu list1</a></li>
+											<li><a href="">Menu list2 <span>(<strong>0</strong>)</span></a></li>
+											<li><a href="">Menu list3 <span>(<strong>99</strong>)</span></a></li>
+										</ul>
+									</div>
+									<div class="tabPanel show">
+										<div class="pd-wrap">1</div>
+									</div>
+								</div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<div class="nav-tabs1">
+		<div class="menu-wrap">
+			<ul class="nav-menu">
+				<li class="active"><a href="">Menu list1</a></li>
+				<li><a href="">Menu list2 <span>(<strong>0</strong>)</span></a></li>
+				<li><a href="">Menu list3 <span>(<strong>99</strong>)</span></a></li>
+			</ul>
+		</div>
+		<div class="tabPanel show">
+			<div class="pd-wrap">
+				Add Contents
+			</div>
+		</div>
+	</div>
+									</xmp></pre>
+							</div>
+						</article>
+						
+						<article class="margin-top20">
+							<h4 id="navi_menu2" class="sub-title">탭메뉴 (탭형)</h4>
+							<div class="preview">
+								<nav class="tab-menu">
+									<ul>
+										<li class="active"><a href="#">Menu List1</a></li>
+										<li><a href="#">Menu List2</a></li>
+										<li><a href="#">Menu List3</a></li>
+									</ul>
+								</nav>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<nav class="tab-menu">
+		<ul>
+			<li class="active"><a href="#">Menu List1</a></li>
+			<li><a href="#">Menu List2</a></li>
+			<li><a href="#">Menu List3</a></li>
+		</ul>
+	</nav>
+									</xmp></pre>
+							</div>
+						</article>
+					</section>
+					
+					<section id="no_item">
+						<h3 class="title">No Item</h3>
+						<article>
+							<h4 id="no_content" class="sub-title">Not Content</h4>
+							<div class="preview">
+								<p class="not-content"><img src="../../images/admin/other/no_item.png" alt="표시할 항목이 없습니다"></p>
+								<p class="not-content2"><img src="../../images/admin/other/no_item2.png" alt="콘텐츠 준비중입니다"></p>
+								<div class="not-content3">
+									<p class="icon"><img src="../../images/admin/other/no_item3.png" alt="warning"></p>
+									<p class="text">No Contents</p>
+								</div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<p class="not-content"><img src="../../images/admin/other/no_item.png" alt="표시할 항목이 없습니다"></p>
+	<p class="not-content2"><img src="../../images/admin/other/no_item2.png" alt="콘텐츠 준비중입니다"></p>
+	
+	<div class="not-content3">
+		<p class="icon"><img src="../../images/admin/other/no_item3.png" alt="warning"></p>
+		<p class="text">No Contents</p>
+	</div>
+									</xmp></pre>
+							</div>
+						</article>
+					</section>
+					
+					<section id="accordion">
+						<h3 class="title">Accordion</h3>
+						<article>
+							<h4 id="accordion_option" class="sub-title">Example</h4>
+							<div class="preview">
+								<dl id="accordion" class="accordion">
+									<dt>
+										<a class="open" href="#">제목 내용 클릭시 열림</a>
+									</dt>
+									<dd>
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+										3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+										Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+										Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+									</dd>
+									
+									<dt>
+										<a class="open" href="#">제목 내용 클릭시 열림 제목 내용 클릭시 열림</a>
+									</dt>
+									<dd>
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+										3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+										Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+										Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+									</dd>
+								</dl>
+
+								<script>accordion();</script>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<dl id="accordion" class="accordion">
+		<dt>
+			<a class="open" href="#">제목 출력</a>
+		</dt>
+		<dd>
+			내용 출력
+		</dd>
+	</dl>
+
+	<script>accordion();</script>
+									</xmp></pre>
+							</div>
+						</article>
+					</section>
+					
+					<section id="icon">
+						<h3 class="title">Icon</h3>
+						<article>
+							<h4 id="icon_option" class="sub-title">Example</h4>
+							<div class="preview">
+								<div>
+									<img src="../../images/admin/icon/temp/black_check.png" alt="check">
+									<img src="../../images/admin/icon/temp/black_close.png" alt="close">
+									<img src="../../images/admin/icon/temp/black_location.png" alt="location">
+									<img src="../../images/admin/icon/temp/black_edit.png" alt="edit">
+									<img src="../../images/admin/icon/temp/black_del.png" alt="del">
+									<img src="../../images/admin/icon/temp/black_search.png" alt="search">
+									<img src="../../images/admin/icon/temp/black_search2.png" alt="search add">
+									<img src="../../images/admin/icon/temp/black_search3.png" alt="search remove">
+									<img src="../../images/admin/icon/temp/black_print.png" alt="print">
+									<img src="../../images/admin/icon/temp/black_setting.png" alt="setting">
+									<img src="../../images/admin/icon/temp/black_add.png" alt="add">
+									<img src="../../images/admin/icon/temp/black_remove.png" alt="remove">
+									<img src="../../images/admin/icon/temp/black_warning.png" alt="warning">
+									<img src="../../images/admin/icon/temp/black_info.png" alt="info">
+									<img src="../../images/admin/icon/temp/black_del2.png" alt="del">
+									<img src="../../images/admin/icon/temp/black_link.png" alt="link">
+									<img src="../../images/admin/icon/temp/black_mail.png" alt="mail">
+									<img src="../../images/admin/icon/temp/black_picture.png" alt="picture">
+									<img src="../../images/admin/icon/temp/black_star.png" alt="star">
+									<img src="../../images/admin/icon/temp/black_heart.png" alt="heart">
+									<img src="../../images/admin/icon/temp/black_heart2.png" alt="heart">
+									<img src="../../images/admin/icon/temp/black_like.png" alt="like">
+									<img src="../../images/admin/icon/temp/black_reload.png" alt="reload">
+									<img src="../../images/admin/icon/temp/black_login.png" alt="login">
+									<img src="../../images/admin/icon/temp/black_logout.png" alt="logout">
+								</div>
+								<div>
+									<img src="../../images/admin/icon/temp/red_check.png" alt="check">
+									<img src="../../images/admin/icon/temp/red_close.png" alt="close">
+									<img src="../../images/admin/icon/temp/red_location.png" alt="location">
+									<img src="../../images/admin/icon/temp/red_edit.png" alt="edit">
+									<img src="../../images/admin/icon/temp/red_del.png" alt="del">
+									<img src="../../images/admin/icon/temp/red_search.png" alt="search">
+									<img src="../../images/admin/icon/temp/red_search2.png" alt="search add">
+									<img src="../../images/admin/icon/temp/red_search3.png" alt="search remove">
+									<img src="../../images/admin/icon/temp/red_print.png" alt="print">
+									<img src="../../images/admin/icon/temp/red_setting.png" alt="setting">
+									<img src="../../images/admin/icon/temp/red_add.png" alt="add">
+									<img src="../../images/admin/icon/temp/red_remove.png" alt="remove">
+									<img src="../../images/admin/icon/temp/red_warning.png" alt="warning">
+									<img src="../../images/admin/icon/temp/red_info.png" alt="info">
+									<img src="../../images/admin/icon/temp/red_del2.png" alt="del">
+									<img src="../../images/admin/icon/temp/red_link.png" alt="link">
+									<img src="../../images/admin/icon/temp/red_mail.png" alt="mail">
+									<img src="../../images/admin/icon/temp/red_picture.png" alt="picture">
+									<img src="../../images/admin/icon/temp/red_star.png" alt="star">
+									<img src="../../images/admin/icon/temp/red_heart.png" alt="heart">
+									<img src="../../images/admin/icon/temp/red_heart2.png" alt="heart">
+									<img src="../../images/admin/icon/temp/red_like.png" alt="like">
+									<img src="../../images/admin/icon/temp/red_reload.png" alt="reload">
+									<img src="../../images/admin/icon/temp/red_login.png" alt="login">
+									<img src="../../images/admin/icon/temp/red_logout.png" alt="logout">
+								</div>
+								<div>
+									<img src="../../images/admin/icon/temp/blue_check.png" alt="check">
+									<img src="../../images/admin/icon/temp/blue_close.png" alt="close">
+									<img src="../../images/admin/icon/temp/blue_location.png" alt="location">
+									<img src="../../images/admin/icon/temp/blue_edit.png" alt="edit">
+									<img src="../../images/admin/icon/temp/blue_del.png" alt="del">
+									<img src="../../images/admin/icon/temp/blue_search.png" alt="search">
+									<img src="../../images/admin/icon/temp/blue_search2.png" alt="search add">
+									<img src="../../images/admin/icon/temp/blue_search3.png" alt="search remove">
+									<img src="../../images/admin/icon/temp/blue_print.png" alt="print">
+									<img src="../../images/admin/icon/temp/blue_setting.png" alt="setting">
+									<img src="../../images/admin/icon/temp/blue_add.png" alt="add">
+									<img src="../../images/admin/icon/temp/blue_remove.png" alt="remove">
+									<img src="../../images/admin/icon/temp/blue_warning.png" alt="warning">
+									<img src="../../images/admin/icon/temp/blue_info.png" alt="info">
+									<img src="../../images/admin/icon/temp/blue_del2.png" alt="del">
+									<img src="../../images/admin/icon/temp/blue_link.png" alt="link">
+									<img src="../../images/admin/icon/temp/blue_mail.png" alt="mail">
+									<img src="../../images/admin/icon/temp/blue_picture.png" alt="picture">
+									<img src="../../images/admin/icon/temp/blue_star.png" alt="star">
+									<img src="../../images/admin/icon/temp/blue_heart.png" alt="heart">
+									<img src="../../images/admin/icon/temp/blue_heart2.png" alt="heart">
+									<img src="../../images/admin/icon/temp/blue_like.png" alt="like">
+									<img src="../../images/admin/icon/temp/blue_reload.png" alt="reload">
+									<img src="../../images/admin/icon/temp/blue_login.png" alt="login">
+									<img src="../../images/admin/icon/temp/blue_logout.png" alt="logout">
+								</div>
+                                <div style="margin-top: 15px">
+                                    <img src="../../images/admin/icon/temp/gray-reply.png" alt="reply" class="reply">
+                                    <img src="../../images/admin/icon/temp/black-reply.png" alt="reply" class="reply">
+                                    <img src="../../images/admin/icon/temp/red-reply.png" alt="reply" class="reply">
+                                    <img src="../../images/admin/icon/temp/blue-reply.png" alt="reply" class="reply">
+                                </div>
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<img src="../../images/admin/icon/temp/black_check.png" alt="check">		<!--black-->
+	<img src="../../images/admin/icon/temp/red_check.png" alt="check"> 		<!--red-->
+	<img src="../../images/admin/icon/temp/blue_check.png" alt="check">		<!--blue-->
+                                
+        <img src="../../images/admin/icon/temp/gray-reply.png" alt="reply" class="reply">
+									</xmp></pre>
+							</div>
+						</article>
+					</section>
+					
+					<section id="photo">
+						<h3 class="title">Photo</h3>
+						<article>
+							<h4 id="photo_option" class="sub-title">Example</h4>
+							<div class="preview">
+								<img src="../../images/admin/other/sample.jpg" alt="">
+								<img class="del" src="../../images/admin/other/sample.jpg" alt="">
+							</div>
+							<div class="ex">
+								<pre class="prettyprint linenums:1">
+									<xmp>
+	<img class="del" src="../../images/admin/other/sample.jpg" alt="">	<!--del 클래스 추가-->
+									</xmp></pre>
+							</div>
+						</article>
+					</section>
+				</div>
+			</div> <!--//contents-->
+		</div> <!--//container-->
+	</main>
+
+	<footer>
+		<div class="go-top"><a id="go_top" href="">Top</a></div>
+	</footer>
+	
+	<script>
+		var didScroll;	//스크롤 감지
+		
+		
+		//스크롤스파이
+		var lastId,
+			topMenu = $("#scroll_spy"),
+			//topMenuHeight = topMenu.outerHeight()+15,
+			topMenuHeight = 32,
+			// All list items
+			menuItems = topMenu.find("a"),
+			// Anchors corresponding to menu items
+			scrollItems = menuItems.map(function(){
+				var item = $($(this).attr("href"));
+				if (item.length) { return item; }
+			});
+		
+		menuItems.click(function(e){
+			var href = $(this).attr("href"),
+				offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+			$('html, body').stop().animate({
+				scrollTop: offsetTop
+			}, 300);
+			e.preventDefault();
+		});
+		
+		//top button
+		$('#go_top').on('click', function(){
+			$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+			return false;
+		});
+		
+		
+		$(window).scroll(function() {
+			didScroll = true; 			//스크롤 이벤트 부하에 따른 setInterval 사용
+		});
+		
+		setInterval(function() {
+			if(didScroll) {
+				/*hasScrolled();*/
+				scroll_leftMenu();		//left menu
+				scroll_topButton();		//top button
+				scroll_spy();			//scroll spy
+				scroll_endBottom();		//end botton
+				
+				didScroll = false;
+			}
+		}, 250);
+		
+		function hasScrolled() {
+			
+		}
+		
+		//left menu
+		function scroll_leftMenu() {
+			var scrollHeight = $(window).scrollTop();
+			
+			if(scrollHeight > 190){
+				$("#left_menu").css({
+					'position': 'fixed',
+					'top': '0px',
+					'bottom': '0px',
+					'left': '20px'
+				});
+				$('#contents').css({
+					'padding-left': '250px'
+				});
+			}
+			else {
+				$("#left_menu").css({
+					'position': 'static',
+					'top': 'auto',
+					'bottom': 'auto',
+					'left': 'auto'
+				});
+				$('#contents').css({
+					'padding-left': '0'
+				});
+			}
+		}
+		
+		//top button
+		function scroll_topButton() {
+			var scrollHeight = $(window).scrollTop();
+			
+			if(scrollHeight > 500) {
+				$('.go-top').fadeIn('500');
+			}
+			else {
+				$('.go-top').fadeOut('100');
+			}
+		}
+		
+		//스크롤 스파이
+		function scroll_spy() {
+			// Get container scroll position
+			var fromTop = $(this).scrollTop()+topMenuHeight;
+
+			// Get id of current scroll item
+			var cur = scrollItems.map(function(){
+				if ($(this).offset().top < fromTop)
+					return this;
+			});
+			// Get the id of the current element
+			cur = cur[cur.length-1];
+			var id = cur && cur.length ? cur[0].id : "";
+
+			if (lastId !== id) {
+				lastId = id;
+				// Set/remove active class
+				menuItems
+					.parent().removeClass("active")
+					.end().filter("[href='#"+id+"']").parent().addClass("active");
+			}
+		}
+		
+		//스크롤이 맨아래 위치했을때
+		function scroll_endBottom() {
+			if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+				alert('맨아래 페이지 입니다.');
+			}
+		}
+		
+		//특정 div 하단에 위치했을때
+		$(".layer-popup .scroll").scroll( function() {
+			var elem = $(".layer-popup .scroll");
+
+			if ( elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight()) {
+				//alert("End of Yellow");
+			}
+		});
+	</script>
+</body>
+</html>

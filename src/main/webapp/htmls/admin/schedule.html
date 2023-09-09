@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="넥스트이지">
+	<meta name="format-detection" content="telephone=no">
+	
+    <title>관리자 &#124; 제주아트센터 통합매표시스템</title>
+	
+	<!-- css -->
+	<link rel="stylesheet" href="../../css/comm/jquery-ui.css">
+	<link rel="stylesheet" href="../../css/admin/comm_default.css">
+	<link rel="stylesheet" href="../../css/admin/comm_style.css">
+	<link rel="stylesheet" href="../../css/admin/frame.css">
+	<link rel="stylesheet" href="../../css/admin/style.css">
+	
+	<!--ie9 미만-->
+	<!--[if lt IE 9]>
+	<script src="../../js/html5shiv.js"></script>
+	<script src="../../js/IE9.js"></script>
+	<![endif]-->
+	
+	<!-- script -->
+	<script src="../../js/jquery-1.11.1.js"></script>
+	<script src="../../js/jquery-ui.js"></script>
+	<script src="../../js/admin/html_comm.js"></script>
+	<script src="../../js/admin/html_style.js"></script>
+	<!-- script add -->
+	<script>
+		$(document).ready(function(){
+			//test datepicker
+			$( ".datepicker" ).datepicker({
+				showOn: "both",
+				buttonImage: "../../images/comm/jquery/calendar.gif",
+				buttonImageOnly: true
+			});
+		});	
+	</script>
+</head>
+<body>
+<div id="wrap">
+	<header id="header">
+		<nav class="top-menu">
+            <div class="container">
+                <a href="" class="home" target="_blank" title="새창">제주아트센터 바로가기</a>
+			    <a href="">정보변경</a>
+			    <a href="">로그아웃</a>
+            </div>
+		</nav>
+        <div class="main-menu-wrapper">
+            <div class="container">
+                <h1 class="logo">
+                    <a href=""><img src="../../images/admin/comm/logo.png" alt="제주아트센터 통합매표시스템"></a>
+                </h1>
+                <nav class="main-menu">
+                    <ul id="depth1" class="depth1">
+                        <li>
+                            <a href="">예매관리</a>
+                            <ul class="depth2">
+                                <li><a href="">2Depth Menu1</a></li>
+                                <li><a href="">2Depth Menu2</a></li>
+                                <li><a href="">2Depth Menu3</a></li>
+                                <li><a href="">2Depth Menu4</a></li>
+                                <li><a href="">2Depth Menu5</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">공연관리</a>
+                            <ul class="depth2">
+                                <li><a href="">2Depth Menu1</a></li>
+                                <li><a href="">2Depth Menu2</a></li>
+                                <li><a href="">2Depth Menu3</a></li>
+                                <li><a href="">2Depth Menu4</a></li>
+                                <li><a href="">2Depth Menu5</a></li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a href="">공연스케줄현황 및 무대관리</a>
+                            <ul class="depth2">
+                                <li><a href="">2Depth Menu1</a></li>
+                                <li><a href="">2Depth Menu2</a></li>
+                                <li><a href="">2Depth Menu3</a></li>
+                                <li><a href="">2Depth Menu4</a></li>
+                                <li><a href="">2Depth Menu5</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">대관신청관리</a>
+                            <ul class="depth2">
+                                <li><a href="">2Depth Menu1</a></li>
+                                <li><a href="">2Depth Menu2</a></li>
+                                <li><a href="">2Depth Menu3</a></li>
+                                <li><a href="">2Depth Menu4</a></li>
+                                <li><a href="">2Depth Menu5</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">판매내역관리</a>
+                            <ul class="depth2">
+                                <li><a href="">2Depth Menu1</a></li>
+                                <li><a href="">2Depth Menu2</a></li>
+                                <li><a href="">2Depth Menu3</a></li>
+                                <li><a href="">2Depth Menu4</a></li>
+                                <li><a href="">2Depth Menu5</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">매출통계분석</a>
+                            <ul class="depth2">
+                                <li><a href="">2Depth Menu1</a></li>
+                                <li><a href="">2Depth Menu2</a></li>
+                                <li><a href="">2Depth Menu3</a></li>
+                                <li><a href="">2Depth Menu4</a></li>
+                                <li><a href="">2Depth Menu5</a></li>
+                            </ul>
+                        </li>
+						<li>
+                            <a href="">정산</a>
+                            <ul class="depth2">
+                                <li><a href="">2Depth Menu1</a></li>
+                                <li><a href="">2Depth Menu2</a></li>
+                                <li><a href="">2Depth Menu3</a></li>
+                                <li><a href="">2Depth Menu4</a></li>
+                                <li><a href="">2Depth Menu5</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div> <!--//main-menu-wrapper-->
+	</header>
+
+	<main id="main">
+		<section class="contents-wrap">
+            <h2 class="title1">공연스케줄현황 및 무대관리</h2>
+            <!-- 3Depth Menu (메뉴없을 시 삭제) -->
+            
+            <!-- //3Depth Menu (메뉴없을 시 삭제) -->
+            
+            
+            <div class="content-zone">
+               
+                <!-- Change Contents (↓↓콘텐츠 변경↓↓) -->
+				<div class="calendar_wrap">
+					<div class="cal_header"><a href="#" title="처음달"><img src="../../images/admin/btn/cal_first.png" alt="처음달"></a><a href="#" title="이전달"><img src="../../images/admin/btn/cal_prev.png" alt="이전달"></a> <strong>2018. 9</strong> <a href="#" title="다음달"><img src="../../images/admin/btn/cal_next.png" alt="다음달"></a><a href="#" title="마지막달"><img src="../../images/admin/btn/cal_last.png" alt="마지막달"></a></div>
+					<div class="cal_label_group">
+						<span><img src="../../images/admin/icon/play_month_label_01.png" alt="자체"></span>
+						<span><img src="../../images/admin/icon/play_month_label_02.png" alt="대관"></span>
+						<span><img src="../../images/admin/icon/play_month_label_03.png" alt="세트"></span>
+						<span><img src="../../images/admin/icon/play_month_label_04.png" alt="점검"></span>
+						<span><img src="../../images/admin/icon/play_month_label_05.png" alt="철수"></span>
+						<span><img src="../../images/admin/icon/play_month_label_06.png" alt="예정"></span>
+					</div>
+					<div class="cal">
+						<table class="calendar_table">
+							<colgroup>
+								<col style="width: 14.3%">
+								<col style="width: 14.3%">
+								<col style="width: 14.3%">
+								<col style="width: 14.2%">
+								<col style="width: 14.3%">
+								<col style="width: 14.3%">
+								<col style="width: 14.3%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="sun">SUN</th>
+									<th>MON</th>
+									<th>TUE</th>
+									<th>WED</th>
+									<th>THU</th>
+									<th>FRI</th>
+									<th class="sat">SAT</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><p class="day">&nbsp;</p></td>
+									<td><p class="day">&nbsp;</p></td>
+									<td><p class="day">&nbsp;</p></td>
+									<td><p class="day">&nbsp;</p></td>
+									<td><p class="day">&nbsp;</p></td>
+									<td><p class="day">&nbsp;</p></td>
+									<td class="sat"><p class="day"> 1&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+												<li class="rent"><a href="#"><span class="cal_play">춤. 숨비소리에 놀다</span></a></li>
+											</ul>
+										</div>
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<td class="sun"><p class="day"> 2&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 3&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 4&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 5&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 6&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+												<li class="self"><a href="#"><span class="cal_play">이주민합창제</span></a></li>
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 7&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+												<li class="self"><a href="#"><span class="cal_play">이주민합창제</span></a></li>
+											</ul>
+										</div>
+										</p></td>
+									<td class="sat"><p class="day"> 8&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+												<li class="self"><a href="#"><span class="cal_play">이주민합창제</span></a></li>
+											</ul>
+										</div>
+										</p></td>
+								</tr>
+								<tr>
+									<td class="sun"><p class="day"> 9&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 10&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 11&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 12&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 13&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 14&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td class="sat"><p class="day"> 15&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+								</tr>
+								<tr>
+									<td class="sun"><p class="day"> 16&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 17&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+												<li class="jemgem"><span class="cal_play">월간점검</span></li>
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 18&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+												<li class="jemgem"><span class="cal_play">월간점검</span></li>
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 19&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 20&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 21&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+												<li class="rent"><a href="#"><span class="cal_play">초록우산 나눔음악회</span></a></li>
+											</ul>
+										</div>
+										</p></td>
+									<td class="sat"><p class="day"> 22&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+												<li class="rent"><a href="#"><span class="cal_play">청소년 전통공연 경연대회</span></a></li>
+											</ul>
+										</div>
+										</p></td>
+								</tr>
+								<tr>
+									<td class="sun"><p class="day"> <font style="float:left; font-size: 8pt; text-align: right; padding-left: 5px; padding-top:3px;">추석 연휴</font>23&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td class="sun"><p class="day"> <font style="float:left; font-size: 8pt; text-align: right; padding-left: 5px; padding-top:3px;">추석</font>24&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td class="sun"><p class="day"> <font style="float:left; font-size: 8pt; text-align: right; padding-left: 5px; padding-top:3px;">추석 연휴</font>25&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td class="sun"><p class="day"> <font style="float:left; font-size: 8pt; text-align: right; padding-left: 5px; padding-top:3px;">추석 연휴</font>26&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 27&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+												<li class="self"><a href="#"><span class="cal_play">문화가 있는날-우동떡</span></a></li>
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day"> 28&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td class="sat"><p class="day"> 29&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+								</tr>
+								<tr>
+									<td class="sun"><p class="day"> 30&nbsp;
+										<div class="cal_plays">
+											<ul class="cal_data">
+											</ul>
+										</div>
+										</p></td>
+									<td><p class="day">&nbsp;</p></td>
+									<td><p class="day">&nbsp;</p></td>
+									<td><p class="day">&nbsp;</p></td>
+									<td><p class="day">&nbsp;</p></td>
+									<td><p class="day">&nbsp;</p></td>
+									<td><p class="day">&nbsp;</p></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div> <!--//calendar_wrap-->
+
+				<div class="stage_wrap">
+					<strong class="tit">무대점검관리</strong>
+					<select class="width100">
+						<option value="">내용선택</option>
+						<option value="">무대 자체</option>
+						<option value="">무대 대관</option>
+						<option value="">무대 세트</option>
+						<option value="">무대 점검</option>
+						<option value="">무대 철수</option>
+						<option value="">무대 예정</option>
+					</select>
+					<div class="datepicker"></div>
+					<input type="text" class="width100" placeholder="내용">
+				</div> <!--//calendar_wrap-->
+               
+                <!-- //Change Contents (↑↑콘텐츠 변경↑↑) -->
+                
+            </div> <!-- //content-zone -->
+            
+		</section> <!--//contents-wrap-->
+	</main>
+
+	<footer id="footer">
+		
+	</footer>
+</div> <!--//wrap-->
+</body>
+</html>

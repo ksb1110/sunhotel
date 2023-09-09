@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="넥스트이지">
+	<meta name="format-detection" content="telephone=no">
+	
+	<title>관리자페이지</title>
+	
+	<!-- css -->
+	<link rel="stylesheet" href="../../css/comm/jquery-ui.css">
+	<link rel="stylesheet" href="../../css/admin/comm_default.css">
+	<link rel="stylesheet" href="../../css/admin/comm_style.css">
+	<link rel="stylesheet" href="../../css/admin/frame.css">
+	<link rel="stylesheet" href="../../css/admin/main.css"> <!--메인 전용-->
+	
+	<!--ie9 미만-->
+	<!--[if lt IE 9]>
+	<script src="../../js/html5shiv.js"></script>
+	<script src="../../js/IE9.js"></script>
+	<![endif]-->
+	
+	<!-- script -->
+	<script src="../../js/comm/jquery-3.4.1.js"></script>
+	<script src="../../js/comm/jquery-ui-1.12.1.js"></script>
+	<script src="../../js/admin/html_comm.js"></script>
+	<script src="../../js/admin/html_style.js"></script>
+	<!-- script add -->
+	<script src="../../js/admin/freewall.js"></script>
+	<script src="../../js/admin/chart.js"></script>
+	<script>
+		$(document).ready(function() {
+			//chart (가입현황)
+			var width = $('#chart').width(),
+				config = {
+					type: 'line',
+					data: {
+						labels: ["31일", "1일", "2일", "3일", "4일", "5일", "6일"],
+						datasets: [{
+							label: "가입자",
+							data: [1000, 1500, 500, 3000, 5000, 2500, 4000],
+							fill: true,						
+							borderColor: "rgba(75,169,223,1)",
+							backgroundColor: "rgba(75,169,223,0.1)",
+							pointBorderColor: "rgba(231,76,60,1)",
+							pointBackgroundColor: "#fff",
+							pointBorderWidth: 1
+						}]
+					},
+					options: {
+						responsive: true,
+						legend: {
+							display: false,
+						},
+						scales: {
+							xAxes: [{
+								display: true,
+								scaleLabel: {
+									show: true,
+									labelString: 'Day'
+								}
+							}],
+							yAxes: [{
+								display: true,
+								scaleLabel: {
+									show: true,
+									labelString: 'Value'
+								},
+								ticks: {
+									suggestedMin: 0,
+									suggestedMax: 100,
+								}
+							}]
+						}
+					}
+				};			
+			$('#canvas').attr('width', width);
+
+			window.onload = function() {
+				var ctx = document.getElementById("canvas").getContext("2d");
+				window.myLine = new Chart(ctx, config);
+			};
+		});
+	</script>
+</head>
+<body>
+<div id="wrap">
+    <header id="header">
+        <nav class="top-menu">
+            <div class="container">
+                <a href="" class="home">제주산업정보서비스 바로가기</a>
+                <a href="">비밀번호 변경</a>
+                <a href="">로그아웃</a>
+            </div>
+        </nav>
+        <div class="main-menu-wrapper">
+            <div class="container">
+                <h1 class="logo">
+                    <a href=""><img src="../../images/admin/comm/logo.png" alt="제주산업정보서비스"></a>
+                </h1>
+                <nav class="main-menu">
+                    <ul id="depth1" class="depth1">
+                        <li class="active">
+                            <a href="">지원사업</a>
+                            <ul class="depth2">
+                                <li><a href="">사업공고관리</a></li>
+                                <li><a href="">접수관리</a></li>
+                                <li><a href="">만족도항목관리</a></li>
+                                <li><a href="">성과조사항목관리</a></li>
+                                <li><a href="">기업이력조회</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">교육/세미나</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">지원DB</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">KED</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">RSS</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">부가서비스</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">통계서비스</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">기술거래</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">회원관리</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">CMS</a>
+                            <ul class="depth2">
+                                <li><a href="">sub menu1</a></li>
+                                <li><a href="">sub menu2</a></li>
+                                <li><a href="">sub menu3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div> <!--//main-menu-wrapper-->
+    </header>
+
+	<main id="main">
+	    <!--개발 시 삭제처리-->
+		<!--<div style="font-size: 12px; padding: 20px 20px 0; line-height: 20px;">
+			메인사용방법 (창사이즈에 따른 자동조절)<br>
+			- item 삭제시 혹은 추가시 item 클래스에 <strong class="text-red">col</strong> 숫자를 수정<br>
+			- <strong class="text-red">col1</strong> : 3칸 차지 (1개의 아이템)<br>
+			- <strong class="text-red">col2</strong> : 2칸 차지 (2개의 아이템)<br>
+			- <strong class="text-red">col3</strong> : 1칸 차지 (3개의 아이템)<br>
+			- 클래스 수정 후에는 새로고침(페이지 로딩시 스크립트 처리됨)
+		</div>-->
+        <!--//개발 시 삭제처리-->
+        
+		<section class="main-content">
+            <h2 class="sec-caption">Main Contents</h2>
+            
+			<div id="item-wrap">
+				<div class="item col1 preview-total">
+					<div class="pd-wrap">
+						<ul class="col6">
+							<li>
+								<p class="text-blue">99</p>
+								<h5>미승인사업</h5>
+							</li>
+							<li>
+								<p class="text-red">99</p>
+								<h5>접수중공고</h5>
+							</li>
+							<li>
+								<div class="icon"><img src="../../images/admin/main/icon-03.png" alt=""></div>
+								<h5>KED기업정보</h5>
+							</li>
+							<li>
+								<div class="icon"><img src="../../images/admin/main/icon-04.png" alt=""></div>
+								<h5>교육/세미나관리</h5>
+							</li>
+							<li>
+								<div class="icon"><img src="../../images/admin/main/icon-05.png" alt=""></div>
+								<h5>메일발송</h5>
+							</li>
+							<li>
+								<div class="icon"><img src="../../images/admin/main/icon-06.png" alt=""></div>
+								<h5>SMS발송</h5>
+							</li>
+						</ul>
+					</div>
+				</div>
+			
+				<div class="item col1 preview-total">
+					<div class="pd-wrap">
+						<ul>
+							<li>
+								<p class="text-blue">99</p>
+								<h5>입점신청</h5>
+							</li>
+							<li>
+								<p class="text-red">99</p>
+								<h5>승인요청</h5>
+							</li>
+							<li>
+								<p>99</p>
+								<h5>승인요청</h5>
+							</li>
+							<li>
+								<p>99</p>
+								<h5>승인요청</h5>
+							</li>
+							<li>
+								<p>99</p>
+								<h5>승인요청</h5>
+							</li>
+							<li>
+								<p>99</p>
+								<h5>승인요청</h5>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+				<!--방문현황-->
+				<div class="item col3 visit-info">
+					<div class="pd-wrap">
+						<h4 class="title3">방문현황</h4>
+						<div class="total">
+							<p class="title">TOTAL</p>
+							<p class="count">999,000</p>
+						</div>
+						<ul class="list">
+							<li>
+								<p class="title">최근 30일</p>
+								<p class="count">99,000</p>
+							</li>
+							<li>
+								<p class="title">최근 7일</p>
+								<p class="count">99,000</p>
+							</li>
+							<li>
+								<p class="title">오늘</p>
+								<p class="count">99,000</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+				<!--가입현황-->
+				<div class="item col2 sign-info">
+					<div class="pd-wrap">
+						<h4 class="title3">가입현황</h4>
+						<div id="chart" class="chart-line">
+							<canvas id="canvas" height="120"></canvas>
+						</div>
+					</div>
+				</div>
+				
+				<!--가입회원-->
+				<div class="item col1 sign-member">
+					<div class="pd-wrap">
+						<h4 class="title3">가입회원 <p class="side-text">(<span>신규 : <strong>999</strong></span> | <span>남성 : <strong class="text-blue">999</strong></span> | <span>여성 : <strong class="text-red">999</strong></span>)</p></h4>
+						<table class="table-col center">
+							<colgroup>
+								<col>
+								<col style="width: 15%">
+								<col style="width: 15%">
+								<col style="width: 14%">
+								<col style="width: 8%">
+								<col style="width: 8%">
+								<col style="width: 8%">
+								<col style="width: 8%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>아이디</th>
+									<th>이름</th>
+									<th>닉네임</th>
+									<th>일시</th>
+									<th>권한</th>
+									<th>수신</th>
+									<th>공개</th>
+									<th>인증</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>userid</td>
+									<td>홍길동</td>
+									<td>닉네임</td>
+									<td>2016-06-14 10:18</td>
+									<td>9</td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+								</tr>
+								<tr>
+									<td>userid</td>
+									<td>홍길동</td>
+									<td>닉네임</td>
+									<td>2016-06-14 10:18</td>
+									<td>9</td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+								</tr>
+								<tr>
+									<td>userid</td>
+									<td>홍길동</td>
+									<td>닉네임</td>
+									<td>2016-06-14 10:18</td>
+									<td>9</td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+								</tr>
+								<tr>
+									<td>userid</td>
+									<td>홍길동</td>
+									<td>닉네임</td>
+									<td>2016-06-14 10:18</td>
+									<td>9</td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+								</tr>
+								<tr>
+									<td>userid</td>
+									<td>홍길동</td>
+									<td>닉네임</td>
+									<td>2016-06-14 10:18</td>
+									<td>9</td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+									<td><img src="../../images/admin/icon/check2.png" alt="체크"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<!--공지사항-->
+				<div class="item col3 notice-list">
+					<div class="pd-wrap">
+						<h4 class="title3">공지사항 <a class="side-btn" href="#">바로가기</a></h4>
+						<ul class="board-list">
+							<li><a href="#">2016 전국장애인가족 수상스포츠 페스티벌 개최 홍보 및 참가모집</a><span class="date">2016-06-07</span></li>
+							<li><a href="#">2016 전국장애인가족 수상스포츠 페스티벌 개최 홍보 및 참가모집</a><span class="date">2016-06-07</span></li>
+							<li><a href="#">2016 전국장애인가족 수상스포츠 페스티벌 개최 홍보 및 참가모집</a><span class="date">2016-06-07</span></li>
+							<li><a href="#">2016 전국장애인가족 수상스포츠 페스티벌 개최 홍보 및 참가모집</a><span class="date">2016-06-07</span></li>
+							<li><a href="#">2016 전국장애인가족 수상스포츠</a><span class="date">2016-06-07</span></li>
+						</ul>
+					</div>
+				</div>
+				
+				<!--신규게시물-->
+				<div class="item col3 new-list">
+					<div class="pd-wrap">
+						<h4 class="title3">신규게시물 <a class="side-btn" href="#">바로가기</a></h4>
+						<ul class="board-list">
+							<li><a href="#">2016 전국장애인가족 수상스포츠 페스티벌 개최 홍보 및 참가모집</a><span class="date">2016-06-07</span></li>
+							<li><a href="#">2016 전국장애인가족 수상스포츠 페스티벌 개최 홍보 및 참가모집</a><span class="date">2016-06-07</span></li>
+							<li><a href="#">2016 전국장애인가족 수상스포츠 페스티벌 개최 홍보 및 참가모집</a><span class="date">2016-06-07</span></li>
+							<li><a href="#">2016 전국장애인가족 수상스포츠 페스티벌 개최 홍보 및 참가모집</a><span class="date">2016-06-07</span></li>
+							<li><a href="#">2016 전국장애인가족 수상스포츠</a><span class="date">2016-06-07</span></li>
+						</ul>
+					</div>
+				</div>
+				
+				<!--기본정보-->
+				<div class="item col3 basic-info">
+					<div class="pd-wrap">
+						<h4 class="title3">기본정보</h4>
+						<div class="info-list">
+							<ul>
+								<li><h6>전체회원</h6><p>999,999명</p></li>
+								<li><h6>신규회원</h6><p>999명</p></li>
+								<li><h6>탈퇴회원</h6><p>9명</p></li>
+							</ul>
+							<ul>
+								<li><h6>접속회원</h6><p>999명</p></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+	</main>
+
+	<footer id="footer">
+		
+	</footer>
+	<!--<script>
+		$(function() {
+			var wall = new Freewall("#item-wrap");
+			wall.reset({
+				selector: '.item'
+			});
+			wall.fitWidth();
+		});
+	</script>-->
+</div> <!--//wrap-->
+</body>
+</html>

@@ -1,0 +1,356 @@
+@charset "utf-8";
+@import url("../comm/webFont.css"); /* 웹폰트 로드 */
+@import url("print.css");
+
+
+/* --------------------------------------------------------- basic ------------------------------------------------------------------ */
+/* html, body */
+* {margin: 0; padding: 0;}
+
+html,
+body,
+input,
+textarea,
+select,
+button {
+    font-family:'Nanum Gothic', '돋움', 'Dotum', sans-serif;
+    font-weight: normal;
+    color: #333333;
+}
+
+html {
+  font-size: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+body {
+	background-color: #fff; overflow-x: hidden;
+}
+
+
+/* html5 default */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {display: block;}
+audio, canvas, progress, video {display: inline-block; vertical-align: baseline;}
+em, address, caption, cite {font-style: normal;}
+
+
+/* normal */
+img {vertical-align: middle; border: none; position: relative; top: -1px;}
+ul li, dl dt dd, ol li {list-style: none;}
+a {text-decoration: none; border: none; cursor: pointer;}
+a:link {}
+a:visited {}
+a:hover {}
+a:active {}
+a.hide-link {width: 0px; height: 0px; font-size: 0; line-height: 0; overflow: hidden; text-indent: -9999px;} /* 웹접근성 커서 이동 링크에 따른 추가 (약관) */
+
+h1, h2, h3, h4, h5, h6 {color: #2f2f2f; font-weight: 700;}
+h1 {font-size: 36px;}
+h2 {font-size: 30px;}
+h3 {font-size: 24px;}
+h4 {font-size: 18px;}
+h5 {font-size: 14px;}
+h6 {font-size: 12px;}
+
+input, textarea, button {outline: none;}
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {background: #fff;}
+input[type="file"] {padding: 0; border: none;}
+input[type="image"] {border: none;}
+input[type="radio"] {border: none;}
+input[type="checkbox"] {border:none;}
+
+/* padding 영역 벗어나는거 잡아주기 위한 css */
+input, textarea, select {    
+  -webkit-box-sizing: border-box; /* Safari, Chrome et al */
+     -moz-box-sizing: border-box; /* Firefox */
+          box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+/* select style */
+select {
+  -webkit-border-radius: 1px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+  appearance: none;  
+  background: url("../../images/admin/icon/basic/select.png") no-repeat right 8px top 50% #fff; /* 화살표 모양의 이미지 */
+  background-size: 8px 4px; 
+  padding-left: 8px; padding-right: 35px;
+  border-radius: 0px; /* iOS 둥근모서리 제거 */
+}
+/* IE 10, 11의 네이티브 화살표 숨기기 */
+select::-ms-expand {
+  display: none;
+}
+
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0; border: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+
+/* Default Content style */
+strong {font-weight: bold;}
+table, table tr th, table tr td {border: none;}
+label.dNone {background: none; width: 0; height: 0; font-size: 0; line-height: 0; margin: 0; padding: 0; position: absolute; visibility: hidden;}
+
+.show {display: block !important;}
+.hide {display: none !important;}
+.hidden {visibility: hidden !important;}
+.bold {font-weight: bold;}
+.clear {clear: both;}
+.tableCaption {width: 0px; height: 0px; font-size: 0; line-height: 0; overflow: hidden;}
+.skip-content {
+  overflow: hidden;
+  border: none !important;
+  background: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  font-size: 0;
+  line-height: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-indent: -9999px;
+}
+.ellipsis {overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+
+
+/* Align */
+.text-left {text-align: left !important;}
+.text-center {text-align: center !important;}
+.text-right {text-align: right !important;}
+.text-justify {text-align: justify !important;}
+
+
+
+/* margin */
+.margin {margin: 0;}
+.margin-top0 {margin-top: 0px;}
+.margin-top5 {margin-top: 5px;}
+.margin-top10 {margin-top: 10px;}
+.margin-top15 {margin-top: 15px;}
+.margin-top20 {margin-top: 20px;}
+.margin-top25 {margin-top: 25px;}
+.margin-top30 {margin-top: 30px;}
+.margin-top35 {margin-top: 35px;}
+.margin-top40 {margin-top: 40px;}
+.margin-top45 {margin-top: 45px;}
+.margin-top50 {margin-top: 50px;}
+.margin-top55 {margin-top: 55px;}
+.margin-top60 {margin-top: 60px;}
+.margin-top65 {margin-top: 65px;}
+.margin-top70 {margin-top: 70px;}
+.margin-top75 {margin-top: 75px;}
+.margin-top80 {margin-top: 80px;}
+.margin-top85 {margin-top: 85px;}
+.margin-top90 {margin-top: 90px;}
+.margin-top95 {margin-top: 95px;}
+.margin-top100 {margin-top: 100px;}
+.margin-bottom0 {margin-bottom: 0px;}
+.margin-bottom5 {margin-bottom: 5px;}
+.margin-bottom10 {margin-bottom: 10px;}
+.margin-bottom15 {margin-bottom: 15px;}
+.margin-bottom20 {margin-bottom: 20px;}
+.margin-bottom25 {margin-bottom: 25px;}
+.margin-bottom30 {margin-bottom: 30px;}
+.margin-bottom35 {margin-bottom: 35px;}
+.margin-bottom40 {margin-bottom: 40px;}
+.margin-bottom45 {margin-bottom: 45px;}
+.margin-bottom50 {margin-bottom: 50px;}
+.margin-bottom55 {margin-bottom: 55px;}
+.margin-bottom60 {margin-bottom: 60px;}
+.margin-bottom65 {margin-bottom: 60px;}
+.margin-bottom70 {margin-bottom: 70px;}
+.margin-bottom75 {margin-bottom: 75px;}
+.margin-bottom80 {margin-bottom: 80px;}
+.margin-bottom85 {margin-bottom: 85px;}
+.margin-bottom90 {margin-bottom: 90px;}
+.margin-bottom95 {margin-bottom: 95px;}
+.margin-bottom100 {margin-bottom: 100px;}
+.margin-left0 {margin-left: 0px;}
+.margin-left5 {margin-left: 5px;}
+.margin-left10 {margin-left: 10px;}
+.margin-left15 {margin-left: 15px;}
+.margin-left20 {margin-left: 20px;}
+.margin-left25 {margin-left: 25px;}
+.margin-left30 {margin-left: 30px;}
+.margin-right0 {margin-right: 0px;}
+.margin-right5 {margin-right: 5px;}
+.margin-right10 {margin-right: 10px;}
+.margin-right15 {margin-right: 15px;}
+.margin-right20 {margin-right: 20px;}
+.margin-right25 {margin-right: 25px;}
+.margin-right30 {margin-right: 30px;}
+
+
+
+/* padding */
+.padding {padding: 0;}
+.padding-top0 {padding-top: 0px;}
+.padding-top5 {padding-top: 5px;}
+.padding-top10 {padding-top: 10px;}
+.padding-top15 {padding-top: 15px;}
+.padding-top20 {padding-top: 20px;}
+.padding-top25 {padding-top: 25px;}
+.padding-top30 {padding-top: 30px;}
+.padding-bottom0 {padding-bottom: 0px;}
+.padding-bottom5 {padding-bottom: 5px;}
+.padding-bottom10 {padding-bottom: 10px;}
+.padding-bottom15 {padding-bottom: 15px;}
+.padding-bottom20 {padding-bottom: 20px;}
+.padding-bottom25 {padding-bottom: 25px;}
+.padding-bottom30 {padding-bottom: 30px;}
+.padding-left0 {padding-left: 0px;}
+.padding-left5 {padding-left: 5px;}
+.padding-left10 {padding-left: 10px;}
+.padding-left15 {padding-left: 15px;}
+.padding-left20 {padding-left: 20px;}
+.padding-left25 {padding-left: 25px;}
+.padding-left30 {padding-left: 30px;}
+.padding-right0 {padding-right: 0px;}
+.padding-right5 {padding-right: 5px;}
+.padding-right10 {padding-right: 10px;}
+.padding-right15 {padding-right: 15px;}
+.padding-right20 {padding-right: 20px;}
+.padding-right25 {padding-right: 25px;}
+.padding-right30 {padding-right: 30px;}
+
+
+
+/* width */
+.width1 {width: 1%;}
+.width2 {width: 2%;}
+.width3 {width: 3%;}
+.width4 {width: 4%;}
+.width5 {width: 5%;}
+.width6 {width: 6%;}
+.width7 {width: 7%;}
+.width8 {width: 8%;}
+.width9 {width: 9%;}
+.width10 {width: 10%;}
+.width11 {width: 11%;}
+.width12 {width: 12%;}
+.width13 {width: 13%;}
+.width14 {width: 14%;}
+.width15 {width: 15%;}
+.width16 {width: 16%;}
+.width17 {width: 17%;}
+.width18 {width: 18%;}
+.width19 {width: 19%;}
+.width20 {width: 20%;}
+.width21 {width: 21%;}
+.width22 {width: 22%;}
+.width23 {width: 23%;}
+.width24 {width: 24%;}
+.width25 {width: 25%;}
+.width26 {width: 26%;}
+.width27 {width: 27%;}
+.width28 {width: 28%;}
+.width29 {width: 29%;}
+.width30 {width: 30%;}
+.width31 {width: 31%;}
+.width32 {width: 32%;}
+.width33 {width: 33%;}
+.width34 {width: 34%;}
+.width35 {width: 35%;}
+.width36 {width: 36%;}
+.width37 {width: 37%;}
+.width38 {width: 38%;}
+.width39 {width: 39%;}
+.width40 {width: 40%;}
+.width41 {width: 41%;}
+.width42 {width: 42%;}
+.width43 {width: 43%;}
+.width44 {width: 44%;}
+.width45 {width: 45%;}
+.width46 {width: 46%;}
+.width47 {width: 47%;}
+.width48 {width: 48%;}
+.width49 {width: 49%;}
+.width50 {width: 50%;}
+.width51 {width: 51%;}
+.width52 {width: 52%;}
+.width53 {width: 53%;}
+.width54 {width: 54%;}
+.width55 {width: 55%;}
+.width56 {width: 56%;}
+.width57 {width: 57%;}
+.width58 {width: 58%;}
+.width59 {width: 59%;}
+.width60 {width: 60%;}
+.width61 {width: 61%;}
+.width62 {width: 62%;}
+.width63 {width: 63%;}
+.width64 {width: 64%;}
+.width65 {width: 65%;}
+.width66 {width: 66%;}
+.width67 {width: 67%;}
+.width68 {width: 68%;}
+.width69 {width: 69%;}
+.width70 {width: 70%;}
+.width71 {width: 71%;}
+.width72 {width: 72%;}
+.width73 {width: 73%;}
+.width74 {width: 74%;}
+.width75 {width: 75%;}
+.width76 {width: 76%;}
+.width77 {width: 77%;}
+.width78 {width: 78%;}
+.width79 {width: 79%;}
+.width80 {width: 80%;}
+.width81 {width: 81%;}
+.width82 {width: 82%;}
+.width83 {width: 83%;}
+.width84 {width: 84%;}
+.width85 {width: 85%;}
+.width86 {width: 86%;}
+.width87 {width: 87%;}
+.width88 {width: 88%;}
+.width89 {width: 89%;}
+.width90 {width: 90%;}
+.width91 {width: 91%;}
+.width92 {width: 92%;}
+.width93 {width: 93%;}
+.width94 {width: 94%;}
+.width95 {width: 95%;}
+.width96 {width: 96%;}
+.width97 {width: 97%;}
+.width98 {width: 98%;}
+.width99 {width: 99%;}
+.width100 {width: 100%;}
+/* --------------------------------------------------------- //basic ------------------------------------------------------------------ */

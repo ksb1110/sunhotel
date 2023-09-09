@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="넥스트이지">
+	<meta name="format-detection" content="telephone=no">
+	
+	<title>팝업</title>
+	
+	<!-- css -->
+	<link rel="stylesheet" href="../../css/comm/jquery-ui.css">
+	<link rel="stylesheet" href="../../css/admin/comm_default.css">
+	<link rel="stylesheet" href="../../css/admin/comm_style.css">
+	<link rel="stylesheet" href="../../css/admin/frame.css">
+	<link rel="stylesheet" href="../../css/admin/style.css">
+	
+	<!--ie9 미만-->
+	<!--[if lt IE 9]>
+	<script src="../../js/html5shiv.js"></script>
+	<script src="../../js/IE9.js"></script>
+	<![endif]-->
+	
+	<!-- script -->
+	<script src="../../js/comm/jquery-3.4.1.js"></script>
+	<script src="../../js/comm/jquery-ui-1.12.1.js"></script>
+	<script src="../../js/admin/html_comm.js"></script>
+	<script src="../../js/admin/html_style.js"></script>
+</head>
+<body>	
+<div id="wrap">
+	<div class="print-preview certificate">
+        <div class="certificate-wrapper">
+
+            <!--paper : A4한장에 1개의 수료증 출력 -->
+            <div class="paper">
+                <div class="certificate-group paper">
+                    <div class="pd-area">
+                        <div class="img-bg">
+                            <img src="../../images/admin/print/certificate-bg.jpg" alt="">
+                        </div>
+                        <div class="top-number">제 <strong>2017-1002</strong> 호</div>
+                        <div class="middle-text">
+                        	<div class="info">
+                        		<table>
+                        			<tr>
+                        				<th>소　　속 : </th>
+                        				<td>(재)제주테크노파크테크노파크</td>
+                        			</tr>
+                        			<tr>
+                        				<th>성　　명 : </th>
+                        				<td>홍 길 동</td>
+                        			</tr>
+                        			<tr>
+                        				<th>과 정 명 : </th>
+                        				<td>“제역주력산업육성사업(물응용산업분야)” 기능성 음료제조 및 기술교육</td>
+                        			</tr>
+                        			<tr>
+                        				<th>기　　간 : </th>
+                        				<td>2017.11.14 24:00 ~ 2018.12.31 24:00</td>
+                        			</tr>
+                        		</table>
+                        	</div>
+                        	<div class="memo">
+                        		위사람은 주관기관주관기관주관기관의 지원아래 담당부서담당부서이(가) 수행한 상기 과정을 수료하였으므로 이 증서를 수여합니다.
+                        	</div>
+                        </div>
+                        <div class="bottom-text">
+                            2017년 12월 30일
+                        </div>
+                    </div> <!--//pd-area-->
+                </div> <!--//certificate-group-->
+            </div> <!--//paper-->
+            <div class="btn-area">
+                <button type="button" class="btn print" onclick="window.print()">수료증 프린트</button>
+                <p class="caption-text">(인쇄 시 크롬 브라우저를 이용해 주세요.)</p>
+            </div>
+            <!--//paper : A4한장에 1개의 수료증 출력 -->
+            
+        </div> <!--//certificate-wrapper-->
+    </div> <!--//print-preview-->
+</div> <!--//wrap-->
+</body>
+</html>
