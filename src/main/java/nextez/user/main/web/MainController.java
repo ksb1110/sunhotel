@@ -10,6 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -58,5 +59,21 @@ public class MainController {
     	}
         
         return new ModelAndView("user/main/main", resultMap);
+    }
+    
+    /**
+     * 관리자 > 메인 > 해더
+     * 메소드명 : header
+     * 작성일 : 2019. 6. 17. 오후 4:34:31
+     * 작성자 : 김승범
+     * @param request
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/user/header.ez")
+    public String header(HttpServletRequest request, ModelMap model) {
+    	
+        model.addAttribute("sessionUserVO", request.getSession().getAttribute("sessionUserVO"));
+        return "user/include/header";
     }
 }
