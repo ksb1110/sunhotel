@@ -40,11 +40,11 @@ function moveFirstChild(obj) {
                     	<li <c:if test="${param.admin_menu == 'main'}">class="active"</c:if>>
                             <a href="#firstChild" onclick="moveFirstChild($(this));">보고서</a>
                             <ul class="depth2">                            	
-                            	<li><a href="<c:url value="/smtmng/main/setting/settingUpdateView.ez"/>">설정</a></li>
-                            	<li><a href="<c:url value="/smtmng/main/promotionMovie/promotionMovieList.ez"/>">홍보영상관리</a></li>
-                            	<li><a href="<c:url value="/smtmng/main/campaign/campaignList.ez"/>">캠페인이미지관리</a></li>
-                            	<li><a href="<c:url value="/smtmng/main/subtitle/subtitleList.ez"/>">자막관리</a></li>
-                            	<li><a href="<c:url value="/smtmng/main/find/findList.ez"/>">부서바로찾기관리</a></li>
+                            	<li><a href="<c:url value="/user/form/form1.ez"/>">보고서1</a></li>
+                            	<li><a href="<c:url value="/user/form/form2.ez"/>">보고서2</a></li>
+                            	<li><a href="<c:url value="/user/form/form3.ez"/>">보고서3</a></li>
+                            	<li><a href="<c:url value="/user/form/form4.ez"/>">보고서4</a></li>
+                            	<li><a href="<c:url value="/user/form/form5.ez"/>">보고서5</a></li>
                             </ul>
                         </li>
                         
