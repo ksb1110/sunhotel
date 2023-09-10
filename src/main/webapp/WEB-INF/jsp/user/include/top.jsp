@@ -16,7 +16,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="author" content="넥스트이지">
+<meta name="author" content="유비즈정보기술">
 <meta name="format-detection" content="telephone=no">
 
 <!-- css -->
