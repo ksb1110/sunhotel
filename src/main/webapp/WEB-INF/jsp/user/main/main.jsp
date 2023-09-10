@@ -22,12 +22,12 @@
 	<!-- 해당 페이지의 상위 메뉴 설정 (상위메뉴가 체크된 상태로 표시되도록) -->
 	<jsp:include page="/user/header.ez" flush="false">
 		<jsp:param name="admin_menu" value="main"/>
-		<jsp:param name="admin_menu2" value="campaign"/>
+		<jsp:param name="admin_menu2" value="form1"/>
 	</jsp:include>
 	
     <main id="main">
 		<section class="contents-wrap">
-            <h2 class="title1">서식1</h2>                    
+            <h2 class="title1">보고서1</h2>                    
            	
            	<form name="delete_campaign_form" id="delete_campaign_form" style="display:none;">
            	<input type="hidden" name="seq" value="">

@@ -29,33 +29,22 @@ function moveFirstChild(obj) {
 
 
 
-	<header id="header">
+	<header id="header" style="width:100%;">
         <div class="main-menu-wrapper">
             <div class="container">
                
                 
-                <nav class="main-menu">
+                <nav class="main-menu" style="width:200px;">
                     <ul id="depth1" class="depth1">
                     	
                     	<li <c:if test="${param.admin_menu == 'main'}">class="active"</c:if>>
-                            <a href="#firstChild" onclick="moveFirstChild($(this));">메인관리</a>
+                            <a href="#firstChild" onclick="moveFirstChild($(this));">보고서</a>
                             <ul class="depth2">                            	
                             	<li><a href="<c:url value="/smtmng/main/setting/settingUpdateView.ez"/>">설정</a></li>
                             	<li><a href="<c:url value="/smtmng/main/promotionMovie/promotionMovieList.ez"/>">홍보영상관리</a></li>
                             	<li><a href="<c:url value="/smtmng/main/campaign/campaignList.ez"/>">캠페인이미지관리</a></li>
                             	<li><a href="<c:url value="/smtmng/main/subtitle/subtitleList.ez"/>">자막관리</a></li>
                             	<li><a href="<c:url value="/smtmng/main/find/findList.ez"/>">부서바로찾기관리</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li <c:if test="${param.admin_menu == 'building'}">class="active"</c:if>>
-                            <a href="#firstChild" onclick="moveFirstChild($(this));">청사관리</a>
-                            <ul class="depth2">                            	
-                            	<li><a href="<c:url value="/smtmng/building/building/buildingList.ez"/>">건물정보</a></li>
-                            	<li><a href="<c:url value="/smtmng/building/facility/facilityList.ez"/>">시설정보</a></li>
-                            	<li><a href="<c:url value="/smtmng/building/convenience/convenienceList.ez"/>">편의시설</a></li>
-                            	<li><a href="<c:url value="/smtmng/building/nearbyFacility/nearbyFacilityList.ez"/>">가까운시설</a></li>
-                            	<li><a href="<c:url value="/smtmng/building/route/routeList.ez"/>">경로정보</a></li>
                             </ul>
                         </li>
                         
@@ -77,33 +66,18 @@ function moveFirstChild(obj) {
             <ul id="depth1" class="depth1">
                 
                 <li <c:if test="${param.admin_menu != 'main'}">style="display:none;"</c:if>>
-                   	<a href="#firstChild" onclick="moveFirstChild($(this));">메인관리</a>
+                   	<a href="#firstChild" onclick="moveFirstChild($(this));">보고서</a>
                    	<ul class="depth2">                            	
-                   		<li <c:if test="${param.admin_menu2 == 'setting'}">class="active"</c:if>><a href="<c:url value="/smtmng/main/setting/settingUpdateView.ez"/>">설정</a></li>
-                   		<li <c:if test="${param.admin_menu2 == 'promotionMovie'}">class="active"</c:if>><a href="<c:url value="/smtmng/main/promotionMovie/promotionMovieList.ez"/>">홍보영상관리</a></li>
-                   		<li <c:if test="${param.admin_menu2 == 'campaign'}">class="active"</c:if>><a href="<c:url value="/smtmng/main/campaign/campaignList.ez"/>">캠페인이미지관리</a></li>
-                   		<li <c:if test="${param.admin_menu2 == 'subtitle'}">class="active"</c:if>><a href="<c:url value="/smtmng/main/subtitle/subtitleList.ez"/>">자막관리</a></li>
-                        <li <c:if test="${param.admin_menu2 == 'find'}">class="active"</c:if>><a href="<c:url value="/smtmng/main/find/findList.ez"/>">부서바로찾기관리</a></li>
+                   		<li <c:if test="${param.admin_menu2 == 'form1'}">class="active"</c:if>><a href="<c:url value="/user/form/form1.ez"/>">보고서1</a></li>
+                   		<li <c:if test="${param.admin_menu2 == 'form2'}">class="active"</c:if>><a href="<c:url value="/user/form/form2.ez"/>">보고서2</a></li>
+                   		<li <c:if test="${param.admin_menu2 == 'form3'}">class="active"</c:if>><a href="<c:url value="/user/form/form3.ez"/>">보고서3</a></li>
+                   		<li <c:if test="${param.admin_menu2 == 'form4'}">class="active"</c:if>><a href="<c:url value="/user/form/form4.ez"/>">보고서4</a></li>
+                        <li <c:if test="${param.admin_menu2 == 'form5'}">class="active"</c:if>><a href="<c:url value="/user/form/form5.ez"/>">보고서5</a></li>
                    	</ul>
                	</li>
                
-               	<li <c:if test="${param.admin_menu != 'building'}">style="display:none;"</c:if>>
-                   	<a href="#firstChild" onclick="moveFirstChild($(this));">청사관리</a>
-                   	<ul class="depth2">                            	
-                   		<li <c:if test="${param.admin_menu2 == 'building'}">class="active"</c:if>><a href="<c:url value="/smtmng/building/building/buildingList.ez"/>">건물정보</a></li>
-                   		<li <c:if test="${param.admin_menu2 == 'facility'}">class="active"</c:if>><a href="<c:url value="/smtmng/building/facility/facilityList.ez"/>">시설정보</a></li>
-                   		<li <c:if test="${param.admin_menu2 == 'convenience'}">class="active"</c:if>><a href="<c:url value="/smtmng/building/convenience/convenienceList.ez"/>">편의시설</a></li>
-                        <li <c:if test="${param.admin_menu2 == 'nearbyFacility'}">class="active"</c:if>><a href="<c:url value="/smtmng/building/nearbyFacility/nearbyFacilityList.ez"/>">가까운시설</a></li>
-                   		<li <c:if test="${param.admin_menu2 == 'route'}">class="active"</c:if>><a href="<c:url value="/smtmng/building/route/routeList.ez"/>">경로정보</a></li>
-                   	</ul>
-               	</li>           
-               
            </ul>
         </div>
-        <nav class="foot-info">
-            <!-- <a href="<c:url value="/smtmng/logout.ez"/>">로그아웃</a> -->
-            <a href="<c:url value="/penta/sso/logout.jsp"/>">로그아웃</a>
-        </nav>
 	</aside>
 	
 	

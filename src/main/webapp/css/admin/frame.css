@@ -105,7 +105,7 @@ body {
 
 /* Left Side Menu */
 .left-gnb {
-    position: absolute; left: 0; top: 0; bottom: 0; z-index: 97;
+    position: fixed; left: 0; top: 0; bottom: 0; z-index: 97;
     width: 200px;
     box-sizing: border-box;
     box-shadow: 0px 2px 5px #cdcdcd;
