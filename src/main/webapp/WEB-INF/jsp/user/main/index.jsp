@@ -4,7 +4,7 @@
 
 <%@ include file="/WEB-INF/jsp/common/header.jsp" %>
 
-<title>메인페이지 - 제주시 스마트청사 안내</title> 
+<title>제주 썬호텔</title> 
 
 
  

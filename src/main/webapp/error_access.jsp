@@ -15,9 +15,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="format-detection" content="telephone=no">
-<meta name="author" content="(주)넥스트이지">
-<meta name="description" content="제주시 스마트 청사안내">
-<title>제주시 스마트 청사안내 </title>
+<meta name="author" content="유비즈">
+<meta name="description" content="제주 썬호텔">
+<title>제주 썬호텔</title>
 
 <!-- css -->
 <link rel="stylesheet" href="<c:url value="/css/res/common.css"/>">
